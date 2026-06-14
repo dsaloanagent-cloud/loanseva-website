@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LoanSeva – Your Trusted DSA Loan Agent</title>
+  <title>DSALoanAgent – Your Trusted DSA Loan Partner</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -277,7 +277,7 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">LoanSeva</div>
+  <div class="nav-logo">DSALoanAgent</div>
   <ul class="nav-links" id="navLinks">
     <li><a href="#loans">Loans</a></li>
     <li><a href="#calculator">EMI Calculator</a></li>
@@ -293,7 +293,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <div class="hero-badge">✦ Trusted DSA Loan Partner</div>
+    <div class="hero-badge">✦ Trusted DSA Loan Partner – dsaloanagent</div>
     <h1>Get the Right Loan,<br><span>Fast & Hassle-Free</span></h1>
     <p>We connect you with top banks and NBFCs to get you the best loan deals — home, personal, business, and more. No hidden charges. No lengthy paperwork.</p>
     <div class="hero-btns">
@@ -406,9 +406,9 @@
   <p class="section-sub">Fill the form below and our loan advisor will call you within 2 hours.</p>
   <div class="contact-wrap">
     <div class="contact-info">
-      <div class="contact-item"><div class="contact-icon">📞</div><div><h4>Phone / WhatsApp</h4><p>+91 98765 43210</p></div></div>
-      <div class="contact-item"><div class="contact-icon">📧</div><div><h4>Email</h4><p>info@loanseva.in</p></div></div>
-      <div class="contact-item"><div class="contact-icon">📍</div><div><h4>Office</h4><p>123, Finance Tower, Hyderabad, Telangana – 500001</p></div></div>
+      <div class="contact-item"><div class="contact-icon">📞</div><div><h4>Phone / WhatsApp</h4><p>+91 97053 17513</p></div></div>
+      <div class="contact-item"><div class="contact-icon">📧</div><div><h4>Email</h4><p>info@dsaloanagent.in</p></div></div>
+      <div class="contact-item"><div class="contact-icon">🌐</div><div><h4>Service</h4><p>Online Service – Available Pan India (Freelancer)</p></div></div>
       <div class="contact-item"><div class="contact-icon">🕐</div><div><h4>Working Hours</h4><p>Mon – Sat: 9:00 AM – 7:00 PM</p></div></div>
     </div>
     <div class="contact-form">
@@ -450,8 +450,8 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <div class="logo">LoanSeva</div>
-      <p>Your trusted DSA loan partner. We help individuals and businesses access the right credit at the best rates from leading banks and NBFCs.</p>
+      <div class="logo">DSALoanAgent</div>
+      <p>Your trusted DSA loan partner. Freelance loan consultant helping individuals and businesses access the right credit at the best rates from leading banks and NBFCs. Pan India online service.</p>
     </div>
     <div class="footer-col">
       <h4>Loan Products</h4>
@@ -474,7 +474,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2024 LoanSeva. All rights reserved.</span>
+    <span>© 2024 DSALoanAgent. All rights reserved.</span>
     <span>This website is for information purposes only. Loan approval is subject to bank/NBFC terms.</span>
   </div>
 </footer>
@@ -508,20 +508,46 @@
   }
   calcEMI();
 
-  // Form submit
+  // Form submit - Google Sheets Integration
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbweIjCE7FdmzYUYVSBQchovgZzsiErXQsTSzsUzMLS_g0Hu6kbj05RXoZ2m-k_oH2W4/exec';
+
   function submitForm() {
     const name = document.getElementById('fname').value.trim();
     const mobile = document.getElementById('fmobile').value.trim();
     const ltype = document.getElementById('floantype').value;
+    const amount = document.getElementById('famount').value.trim();
+    const income = document.getElementById('fincome').value;
+    const message = document.getElementById('fmessage').value.trim();
+
     if (!name || !mobile || !ltype) { alert('Please fill Name, Mobile, and Loan Type.'); return; }
     if (mobile.length < 10) { alert('Please enter a valid 10-digit mobile number.'); return; }
-    document.getElementById('successMsg').style.display = 'block';
-    document.getElementById('fname').value = '';
-    document.getElementById('fmobile').value = '';
-    document.getElementById('floantype').value = '';
-    document.getElementById('famount').value = '';
-    document.getElementById('fincome').value = '';
-    document.getElementById('fmessage').value = '';
+
+    const btn = document.querySelector('.btn-submit');
+    btn.textContent = 'Submitting...';
+    btn.disabled = true;
+
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, mobile, loantype: ltype, amount, income, message })
+    })
+    .then(() => {
+      document.getElementById('successMsg').style.display = 'block';
+      document.getElementById('fname').value = '';
+      document.getElementById('fmobile').value = '';
+      document.getElementById('floantype').value = '';
+      document.getElementById('famount').value = '';
+      document.getElementById('fincome').value = '';
+      document.getElementById('fmessage').value = '';
+      btn.textContent = 'Submit Application';
+      btn.disabled = false;
+    })
+    .catch(() => {
+      alert('Something went wrong. Please try again.');
+      btn.textContent = 'Submit Application';
+      btn.disabled = false;
+    });
   }
 </script>
 </body>
