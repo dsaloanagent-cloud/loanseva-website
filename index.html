@@ -1131,5 +1131,54 @@ async function submitLead(){
   }
 }
 </script>
+
+<script>
+function submitLead() {
+  const name = document.getElementById('fName').value.trim();
+  const phone = document.getElementById('fPhone').value.trim();
+  const service = document.getElementById('fService').value;
+  const amount = document.getElementById('fAmount').value;
+  const employment = document.getElementById('fEmp').value;
+  const city = document.getElementById('fCity').value.trim();
+  const message = document.getElementById('fMsg').value.trim();
+
+  if (!name || !phone || !service || !amount) {
+    alert('దయచేసి అన్ని required (*) fields fill చేయండి.');
+    return;
+  }
+
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.innerText = 'Sending...';
+
+  const payload = { name, phone, service, amount, employment, city, message };
+
+  fetch('https://script.google.com/macros/s/AKfycbxeK0fvlbU5MZXPCCQDI2Ri6O6SJsBN9wnii_iIYiNmRFboZhF31D1Cs_FWFx9OQ8adUg/exec', {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain' },
+    body: JSON.stringify(payload)
+  })
+    .then(res => res.json())
+    .then(data => {
+      alert('✅ Thank you! Akhil will call you within 30 minutes.');
+      document.getElementById('fName').value = '';
+      document.getElementById('fPhone').value = '';
+      document.getElementById('fService').value = '';
+      document.getElementById('fAmount').value = '';
+      document.getElementById('fEmp').value = '';
+      document.getElementById('fCity').value = '';
+      document.getElementById('fMsg').value = '';
+      btn.disabled = false;
+      btn.innerText = '📩 Send My Details to Akhil';
+    })
+    .catch(err => {
+      alert('❌ Error sending. దయచేసి మళ్ళీ try చేయండి.');
+      console.error(err);
+      btn.disabled = false;
+      btn.innerText = '📩 Send My Details to Akhil';
+    });
+}
+</script>
+  
 </body>
 </html>
