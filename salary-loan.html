@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Salary Based Loan | Instant Salaried Loan | Same Day Approval | dsaloanagent.in</title>
+<meta name="description" content="Get salary based loan approved in 2 hours. No collateral, minimal documents. Apply now at DSA Loan Agent — serving AP & Telangana."/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue-dark:#0D2B6E;--blue:#1A47B8;--blue-mid:#2563EB;--blue-bright:#3B82F6;
+  --blue-light:#EFF6FF;--blue-pale:#DBEAFE;
+  --accent:#F59E0B;--accent-light:#FEF3C7;
+  --green:#10B981;--red:#EF4444;
+  --white:#fff;--gray-50:#F8FAFC;--gray-100:#F1F5F9;
+  --gray-300:#CBD5E1;--gray-500:#64748B;--gray-700:#334155;--gray-900:#0F172A;
+  --radius:10px;--shadow:0 4px 16px rgba(13,43,110,0.12);--shadow-lg:0 12px 40px rgba(13,43,110,0.18);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#fff;color:var(--gray-900);overflow-x:hidden}
+
+/* TOPBAR */
+.topbar{background:var(--blue-dark);color:rgba(255,255,255,0.75);font-size:0.75rem;padding:0.4rem 5%;display:flex;justify-content:space-between;align-items:center}
+.topbar a{color:rgba(255,255,255,0.8);text-decoration:none;transition:color .15s}
+.topbar a:hover{color:#fff}
+.topbar-right{display:flex;gap:1.5rem}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--gray-100);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:64px}
+.nav-logo{font-family:'Poppins',sans-serif;font-size:1.2rem;font-weight:900;color:var(--blue-dark);text-decoration:none;display:flex;align-items:center;gap:.5rem}
+.nav-logo span{color:var(--blue-mid)}
+.logo-badge{background:var(--blue-mid);color:#fff;font-size:.55rem;font-weight:700;letter-spacing:.5px;padding:.15rem .4rem;border-radius:4px;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:.25rem;list-style:none}
+.nav-links a{padding:.45rem .875rem;font-size:.82rem;font-weight:600;color:var(--gray-700);text-decoration:none;border-radius:6px;transition:background .15s,color .15s}
+.nav-links a:hover,.nav-links a.active{background:var(--blue-light);color:var(--blue-mid)}
+.nav-cta{background:var(--blue-mid)!important;color:#fff!important;border-radius:8px!important}
+.nav-cta:hover{background:var(--blue-dark)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--gray-700);border-radius:2px}
+
+/* BREADCRUMB */
+.breadcrumb{background:var(--gray-50);border-bottom:1px solid var(--gray-100);padding:.6rem 5%}
+.breadcrumb-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:.5rem;font-size:.78rem;color:var(--gray-500)}
+.breadcrumb a{color:var(--blue-mid);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb span{color:var(--gray-300)}
+
+/* URGENCY BANNER */
+.urgency{background:linear-gradient(90deg,#d97706,var(--accent));padding:.55rem 5%;text-align:center}
+.urgency p{font-size:.8rem;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.urgency span{background:rgba(0,0,0,.15);padding:.1rem .5rem;border-radius:4px;font-size:.72rem}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--blue-dark) 0%,#0f3580 50%,var(--blue) 100%);padding:70px 5% 60px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;top:-60px;right:-60px;width:400px;height:400px;border-radius:50%;background:rgba(59,130,246,.08);pointer-events:none}
+.hero-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:3.5rem;align-items:center;position:relative;z-index:1}
+.hero-tag{display:inline-flex;align-items:center;gap:.4rem;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.4);color:var(--accent);font-size:.72rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;padding:.3rem .875rem;border-radius:50px;margin-bottom:1.25rem}
+.hero-tag::before{content:'💼'}
+.hero h1{font-family:'Poppins',sans-serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:900;color:#fff;line-height:1.12;margin-bottom:1rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero h1 small{display:block;font-size:55%;color:rgba(255,255,255,.6);font-weight:600;margin-top:.25rem;letter-spacing:.5px}
+.hero-sub{color:rgba(255,255,255,.72);font-size:.975rem;line-height:1.75;margin-bottom:1.75rem;max-width:480px}
+.hero-pills{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+.pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:.75rem;font-weight:600;padding:.3rem .75rem;border-radius:50px;display:flex;align-items:center;gap:.3rem}
+.pill::before{content:'✓';color:var(--accent);font-weight:800}
+.hero-actions{display:flex;gap:.875rem;flex-wrap:wrap}
+.btn-accent{background:var(--accent);color:var(--gray-900);padding:.85rem 2rem;border-radius:8px;font-weight:800;font-size:.9rem;text-decoration:none;transition:transform .15s,box-shadow .15s;display:inline-flex;align-items:center;gap:.4rem}
+.btn-accent:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(245,158,11,.4)}
+.btn-outline-white{background:transparent;color:#fff;padding:.8rem 1.75rem;border-radius:8px;font-weight:600;font-size:.875rem;text-decoration:none;border:1.5px solid rgba(255,255,255,.4);transition:border-color .15s;display:inline-flex;align-items:center;gap:.4rem}
+.btn-outline-white:hover{border-color:#fff}
+
+/* TIMER */
+.timer-row{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap}
+.timer-item{text-align:center}
+.timer-box{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:.5rem .75rem;min-width:54px}
+.timer-num{font-family:'Poppins',sans-serif;font-size:1.4rem;font-weight:900;color:var(--accent);line-height:1}
+.timer-label{font-size:.62rem;color:rgba(255,255,255,.5);margin-top:.15rem;text-transform:uppercase;letter-spacing:.5px}
+
+/* APPLY CARD */
+.apply-card{background:#fff;border-radius:16px;padding:1.75rem;box-shadow:0 24px 64px rgba(0,0,0,.35)}
+.apply-card-header{background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:10px;padding:1rem 1.25rem;margin-bottom:1.25rem;display:flex;align-items:center;gap:.75rem}
+.apply-card-header h3{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:800;color:#fff}
+.apply-card-header p{font-size:.72rem;color:rgba(255,255,255,.6);margin-top:.1rem}
+.apply-card-icon{font-size:1.75rem}
+.ff{margin-bottom:.875rem}
+.ff label{display:block;font-size:.75rem;font-weight:700;color:var(--gray-700);margin-bottom:.3rem}
+.ff input,.ff select{width:100%;padding:.65rem .875rem;border:1.5px solid var(--gray-300);border-radius:8px;font-family:'Inter',sans-serif;font-size:.85rem;color:var(--gray-900);outline:none;transition:border-color .15s,box-shadow .15s}
+.ff input:focus,.ff select:focus{border-color:var(--blue-mid);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.submit-btn{width:100%;background:linear-gradient(135deg,var(--blue-mid),var(--blue-dark));color:#fff;border:none;border-radius:8px;padding:.9rem;font-weight:800;font-size:.9rem;cursor:pointer;font-family:'Inter',sans-serif;display:flex;align-items:center;justify-content:center;gap:.4rem;transition:opacity .15s;margin-top:.5rem}
+.submit-btn:hover{opacity:.9}
+.submit-btn:disabled{opacity:.6;cursor:not-allowed}
+.secure-note{text-align:center;font-size:.68rem;color:var(--gray-500);margin-top:.625rem;display:flex;align-items:center;justify-content:center;gap:.3rem}
+
+/* TRUST BAR */
+.trustbar{background:var(--blue-pale);padding:.875rem 5%;border-bottom:1px solid #bfdbfe}
+.trustbar-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap}
+.ti{display:flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:700;color:var(--blue-dark)}
+
+/* SECTIONS */
+.section{padding:68px 5%}
+.section-inner{max-width:1280px;margin:0 auto}
+.section-tag{font-size:.7rem;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--blue-mid);margin-bottom:.5rem}
+.section-title{font-family:'Poppins',sans-serif;font-size:clamp(1.5rem,2.5vw,2.1rem);font-weight:900;color:var(--blue-dark);line-height:1.2;margin-bottom:.75rem}
+.section-sub{color:var(--gray-500);font-size:.95rem;line-height:1.7;max-width:540px}
+.section-head{margin-bottom:2.5rem}
+.section-head.center{text-align:center}
+.section-head.center .section-sub{margin:0 auto}
+.bg-light{background:var(--gray-50)}
+.bg-blue{background:var(--blue-light)}
+.bg-dark{background:var(--blue-dark)}
+.bg-dark .section-tag{color:var(--accent)}
+.bg-dark .section-title{color:#fff}
+.bg-dark .section-sub{color:rgba(255,255,255,.55)}
+
+/* SPEED CARDS */
+.speed-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.speed-card{background:#fff;border:1px solid var(--gray-100);border-radius:var(--radius);padding:1.5rem;text-align:center;transition:box-shadow .2s,transform .2s}
+.speed-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.speed-num{font-family:'Poppins',sans-serif;font-size:2rem;font-weight:900;color:var(--blue-mid);line-height:1}
+.speed-unit{font-size:.75rem;font-weight:700;color:var(--accent);display:block;margin-top:.1rem}
+.speed-label{font-size:.8rem;color:var(--gray-500);margin-top:.5rem;line-height:1.5}
+
+/* SALARY SLAB */
+.slab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem}
+.slab-card{background:#fff;border:1px solid var(--gray-100);border-radius:var(--radius);padding:1.5rem;transition:box-shadow .2s,transform .2s,border-color .2s}
+.slab-card:hover{box-shadow:var(--shadow);transform:translateY(-2px);border-color:var(--blue-pale)}
+.slab-salary{font-family:'Poppins',sans-serif;font-size:1rem;font-weight:900;color:var(--blue-mid);margin-bottom:.25rem}
+.slab-card h3{font-size:.85rem;font-weight:700;color:var(--blue-dark);margin-bottom:.35rem}
+.slab-card p{font-size:.78rem;color:var(--gray-500);line-height:1.6}
+.slab-tag{display:inline-block;margin-top:.75rem;font-size:.7rem;font-weight:700;color:var(--blue-mid);background:var(--blue-light);padding:.2rem .5rem;border-radius:4px}
+
+/* FEATURES */
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.feat-card{background:#fff;border:1px solid var(--gray-100);border-radius:var(--radius);padding:1.5rem;display:flex;gap:1rem;align-items:flex-start;transition:box-shadow .2s}
+.feat-card:hover{box-shadow:var(--shadow)}
+.feat-icon{width:44px;height:44px;flex-shrink:0;background:var(--blue-light);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.25rem}
+.feat-card h3{font-size:.875rem;font-weight:700;color:var(--blue-dark);margin-bottom:.3rem}
+.feat-card p{font-size:.78rem;color:var(--gray-500);line-height:1.6}
+
+/* EMI CALC */
+.emi-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.emi-left h2{font-family:'Poppins',sans-serif;font-size:1.75rem;font-weight:900;color:var(--blue-dark);margin-bottom:.75rem}
+.emi-left>p{color:var(--gray-500);line-height:1.75;margin-bottom:1.5rem}
+.quick-rates{display:grid;grid-template-columns:1fr 1fr;gap:.875rem;margin-bottom:1.5rem}
+.qr{background:var(--blue-light);border:1px solid var(--blue-pale);border-radius:var(--radius);padding:1rem}
+.qr-label{font-size:.68rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.2rem}
+.qr-val{font-family:'Poppins',sans-serif;font-size:1.2rem;font-weight:900;color:var(--blue-dark)}
+.qr-note{font-size:.68rem;color:var(--gray-500);margin-top:.15rem}
+.emi-card{background:#fff;border:1px solid var(--gray-100);border-radius:16px;padding:1.75rem;box-shadow:var(--shadow)}
+.emi-card h3{font-family:'Poppins',sans-serif;font-size:1.05rem;font-weight:800;color:var(--blue-dark);margin-bottom:1.25rem}
+.field-row{margin-bottom:1rem}
+.field-row label{display:flex;justify-content:space-between;font-size:.75rem;font-weight:600;color:var(--gray-500);margin-bottom:.4rem}
+.field-row label strong{color:var(--blue-mid)}
+input[type=range]{width:100%;-webkit-appearance:none;height:4px;border-radius:2px;background:var(--gray-100);outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:17px;height:17px;border-radius:50%;background:var(--blue-mid);cursor:pointer;box-shadow:0 2px 6px rgba(37,99,235,.35)}
+.emi-result{background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:10px;padding:1.1rem;margin-top:1rem}
+.emi-label{font-size:.68rem;color:rgba(255,255,255,.5);letter-spacing:.5px;text-transform:uppercase}
+.emi-amount{font-family:'Poppins',sans-serif;font-size:1.85rem;font-weight:900;color:var(--accent);margin-top:.1rem}
+.emi-bd{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.75rem}
+.eb{background:rgba(255,255,255,.07);border-radius:7px;padding:.5rem .625rem}
+.eb-l{font-size:.62rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.4px}
+.eb-v{font-size:.8rem;color:#fff;font-weight:600;margin-top:.1rem}
+.emi-apply{width:100%;margin-top:.875rem;background:var(--accent);color:var(--gray-900);border:none;border-radius:8px;padding:.8rem;font-weight:800;font-size:.875rem;cursor:pointer;font-family:'Inter',sans-serif;transition:background .15s}
+.emi-apply:hover{background:#e08e00}
+
+/* DOCS */
+.docs-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.doc-box{background:#fff;border:1px solid var(--gray-100);border-radius:var(--radius);padding:1.5rem}
+.doc-box h3{font-size:.875rem;font-weight:800;color:var(--blue-dark);margin-bottom:1rem;padding-bottom:.625rem;border-bottom:2px solid var(--blue-pale);display:flex;align-items:center;gap:.4rem}
+.doc-item{display:flex;align-items:center;gap:.5rem;padding:.4rem 0;font-size:.8rem;color:var(--gray-700);border-bottom:1px solid var(--gray-50)}
+.doc-item:last-child{border-bottom:none}
+.doc-item::before{content:'📄';font-size:.875rem;flex-shrink:0}
+.doc-tip{margin-top:1.25rem;background:var(--accent-light);border:1px solid #fcd34d;border-radius:8px;padding:.875rem;font-size:.78rem;color:#92400e;display:flex;gap:.5rem;align-items:flex-start}
+
+/* PROCESS */
+.process-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;position:relative}
+.process-grid::before{content:'';position:absolute;top:26px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,var(--blue-pale),var(--blue-bright),var(--blue-pale));z-index:0}
+.proc-item{text-align:center;position:relative;z-index:1}
+.proc-num{width:52px;height:52px;background:var(--blue-mid);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:900;color:#fff;margin:0 auto .875rem;box-shadow:0 4px 12px rgba(37,99,235,.35);border:3px solid #fff}
+.proc-item h3{font-size:.82rem;font-weight:700;color:var(--blue-dark);margin-bottom:.3rem}
+.proc-item p{font-size:.72rem;color:var(--gray-500);line-height:1.5}
+.proc-time{font-size:.68rem;font-weight:700;color:var(--accent);background:var(--accent-light);padding:.15rem .4rem;border-radius:4px;margin-top:.4rem;display:inline-block}
+
+/* LENDERS DARK */
+.lenders-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem}
+.lender-card{border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:1.25rem;transition:border-color .2s,background .2s}
+.lender-card:hover{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.05)}
+.lender-card h4{font-size:.875rem;font-weight:700;color:#fff;margin-bottom:.25rem;display:flex;align-items:center;gap:.4rem}
+.lender-card p{font-size:.75rem;color:rgba(255,255,255,.4)}
+.lender-rate{margin-top:.625rem;font-size:.78rem;font-weight:700;color:var(--accent)}
+.badge-fast{font-size:.6rem;background:rgba(16,185,129,.2);color:#6ee7b7;padding:.12rem .35rem;border-radius:3px;font-weight:800}
+.badge-easy{font-size:.6rem;background:rgba(245,158,11,.2);color:#fcd34d;padding:.12rem .35rem;border-radius:3px;font-weight:800}
+
+/* ELIGIBILITY TABLE */
+.elig-table{width:100%;border-collapse:collapse;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.elig-table th{background:var(--blue-dark);color:#fff;padding:.875rem 1rem;font-size:.8rem;font-weight:700;text-align:left}
+.elig-table td{padding:.8rem 1rem;font-size:.82rem;border-bottom:1px solid var(--gray-100)}
+.elig-table tr:last-child td{border-bottom:none}
+.elig-table tr:nth-child(even) td{background:var(--gray-50)}
+.elig-table td:first-child{font-weight:700;color:var(--blue-dark);width:30%}
+.check{color:var(--green);font-weight:700}
+
+/* FAQ */
+.faq-list{max-width:760px;margin:0 auto}
+.faq-item{border:1px solid var(--gray-100);border-radius:var(--radius);margin-bottom:.75rem;overflow:hidden}
+.faq-item.open{box-shadow:var(--shadow)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;cursor:pointer;font-size:.9rem;font-weight:600;color:var(--blue-dark);background:#fff;gap:1rem}
+.faq-q span{font-size:1.1rem;color:var(--blue-mid);transition:transform .25s;flex-shrink:0}
+.faq-item.open .faq-q span{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 1.25rem 1rem;font-size:.85rem;color:var(--gray-500);line-height:1.75;background:#fff}
+.faq-item.open .faq-a{display:block}
+
+/* TESTI */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+.testi-card{background:#fff;border:1px solid var(--gray-100);border-radius:var(--radius);padding:1.5rem}
+.stars{color:var(--accent);font-size:.8rem;margin-bottom:.75rem}
+.testi-text{font-size:.875rem;color:var(--gray-700);line-height:1.75;margin-bottom:1.25rem}
+.testi-author{display:flex;align-items:center;gap:.75rem}
+.tav{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:.875rem}
+.tname{font-size:.8rem;font-weight:700;color:var(--blue-dark)}
+.trole{font-size:.7rem;color:var(--gray-500)}
+
+/* CTA */
+.cta-banner{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:60px 5%;text-align:center}
+.cta-banner h2{font-family:'Poppins',sans-serif;font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:900;color:#fff;margin-bottom:.875rem}
+.cta-banner p{color:rgba(255,255,255,.7);font-size:1rem;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--blue-dark);padding:.85rem 2rem;border-radius:8px;font-weight:700;font-size:.875rem;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:transform .15s}
+.btn-white:hover{transform:translateY(-2px)}
+
+/* FOOTER */
+footer{background:var(--blue-dark);color:rgba(255,255,255,.5);padding:3rem 5% 1.5rem}
+.footer-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:2rem;margin-bottom:2rem}
+.footer-brand .nav-logo{display:block;margin-bottom:.75rem;color:#fff}
+.footer-brand p{font-size:.78rem;line-height:1.7;max-width:220px}
+.footer-col h4{font-size:.68rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:.875rem}
+.footer-col a{display:block;color:rgba(255,255,255,.45);text-decoration:none;font-size:.78rem;margin-bottom:.4rem;transition:color .15s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{max-width:1280px;margin:0 auto;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;font-size:.72rem;flex-wrap:wrap;gap:.5rem}
+
+/* FLOATS */
+.wa-float{position:fixed;bottom:1.75rem;right:1.75rem;z-index:400;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.45);transition:transform .2s}
+.wa-float:hover{transform:scale(1.08)}
+.call-float{position:fixed;bottom:1.75rem;left:1.75rem;z-index:400;background:var(--blue-mid);color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,99,235,.4);transition:transform .2s}
+.call-float:hover{transform:scale(1.08)}
+
+/* TOAST */
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(80px);background:var(--blue-dark);color:#fff;padding:.875rem 1.5rem;border-radius:10px;border-left:4px solid var(--accent);box-shadow:var(--shadow-lg);font-size:.875rem;font-weight:500;opacity:0;transition:transform .35s,opacity .35s;z-index:999;white-space:nowrap}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+.toast.error{border-left-color:var(--red)}
+.spinner{width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* MOBILE */
+@media(max-width:900px){
+  .nav-links{display:none}.hamburger{display:flex}
+  .hero-grid{grid-template-columns:1fr}
+  .speed-grid{grid-template-columns:repeat(2,1fr)}
+  .features-grid{grid-template-columns:1fr 1fr}
+  .emi-wrap{grid-template-columns:1fr}
+  .docs-row{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:repeat(2,1fr)}.process-grid::before{display:none}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .quick-rates{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .topbar{display:none}
+  .speed-grid{grid-template-columns:repeat(2,1fr)}
+  .features-grid{grid-template-columns:1fr}
+  .slab-grid{grid-template-columns:1fr 1fr}
+  .process-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .form-row-2{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <span>💼 Salary Based Loan — Best Rates for Salaried Employees | AP & Telangana</span>
+  <div class="topbar-right">
+    <a href="tel:+919705317513">📞 +91 97053 17513</a>
+    <a href="https://wa.me/919705317513" target="_blank">💬 WhatsApp</a>
+  </div>
+</div>
+
+<!-- URGENCY BANNER -->
+<div class="urgency">
+  <p>💼 Special Salaried Rates Active — Lock Your Rate Before <span id="todayDate"></span> Midnight</p>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">DSA <span>Loan</span> Agent <span class="logo-badge">AP & TG</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="personal-loan.html">Personal Loan</a></li>
+      <li><a href="instant-loan.html">Instant Loan</a></li>
+      <li><a href="salary-loan.html" class="active">Salary Loan</a></li>
+      <li><a href="index.html#services">All Services</a></li>
+      <li><a href="#apply" class="nav-cta">Apply Now →</a></li>
+    </ul>
+    <div class="hamburger" onclick="document.getElementById('mNav').style.display='flex'">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div id="mNav" style="display:none;position:fixed;inset:0;background:#fff;z-index:500;flex-direction:column;padding:1.5rem 5%">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem">
+    <span class="nav-logo">DSA <span>Loan</span> Agent</span>
+    <button onclick="document.getElementById('mNav').style.display='none'" style="background:none;border:none;font-size:1.5rem;cursor:pointer">✕</button>
+  </div>
+  <a href="index.html" style="padding:.75rem 0;border-bottom:1px solid var(--gray-100);color:var(--gray-700);text-decoration:none;font-weight:600">Home</a>
+  <a href="personal-loan.html" style="padding:.75rem 0;border-bottom:1px solid var(--gray-100);color:var(--gray-700);text-decoration:none;font-weight:600">Personal Loan</a>
+  <a href="instant-loan.html" style="padding:.75rem 0;border-bottom:1px solid var(--gray-100);color:var(--gray-700);text-decoration:none;font-weight:600">Instant Loan</a>
+  <a href="salary-loan.html" style="padding:.75rem 0;border-bottom:1px solid var(--gray-100);color:var(--blue-mid);text-decoration:none;font-weight:700">Salary Loan</a>
+  <a href="#apply" onclick="document.getElementById('mNav').style.display='none'" style="margin-top:1rem;background:var(--blue-mid);color:#fff;padding:.875rem;border-radius:8px;text-align:center;text-decoration:none;font-weight:700">Apply Now</a>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Home</a><span>›</span>
+    <a href="index.html#services">Loans</a><span>›</span>
+    <span style="color:var(--gray-700);font-weight:600">Salary Based Loan</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-tag">Salaried Employee Special</div>
+      <h1>Salary Based Loan.<br/><em>Lowest Rate. Fast Money.</em><br/><small>Salary slip = instant eligibility · Same day approval</small></h1>
+      <p class="hero-sub">Mee salary slip undaa? Appudu best loan rate guarantee! Government, private, corporate employees ki lowest interest rate lo loan, same day account lo vestaamu. No hidden charges.</p>
+      <div class="hero-pills">
+        <span class="pill">₹50,000 – ₹40 Lakhs</span>
+        <span class="pill">Rate from 10.49%</span>
+        <span class="pill">Approval in 4 Hours</span>
+        <span class="pill">Salary Slip Enough</span>
+        <span class="pill">Govt Staff Special Rates</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#apply" class="btn-accent">💼 Get Salary Loan Now</a>
+        <a href="https://wa.me/919705317513" target="_blank" class="btn-outline-white">💬 WhatsApp for Best Rate</a>
+      </div>
+      <div class="timer-row">
+        <div class="timer-item"><div class="timer-box"><div class="timer-num" id="th">00</div></div><div class="timer-label">Hours</div></div>
+        <div class="timer-item"><div class="timer-box"><div class="timer-num" id="tm">00</div></div><div class="timer-label">Mins</div></div>
+        <div class="timer-item"><div class="timer-box"><div class="timer-num" id="ts">00</div></div><div class="timer-label">Secs</div></div>
+        <div style="display:flex;align-items:center;font-size:.75rem;color:rgba(255,255,255,.55);max-width:120px;line-height:1.4">⏰ Today's processing window closes in</div>
+      </div>
+    </div>
+
+    <!-- APPLY CARD -->
+    <div class="apply-card" id="apply">
+      <div class="apply-card-header">
+        <div class="apply-card-icon">💼</div>
+        <div>
+          <h3>Salary Loan — Apply Now</h3>
+          <p>Best rate guaranteed for salaried employees</p>
+        </div>
+      </div>
+      <div class="form-row-2">
+        <div class="ff"><label>Full Name *</label><input type="text" id="aName" placeholder="Your name"/></div>
+        <div class="ff"><label>Mobile *</label><input type="tel" id="aPhone" placeholder="+91 9876543210"/></div>
+      </div>
+      <div class="form-row-2">
+        <div class="ff">
+          <label>Loan Amount Needed *</label>
+          <select id="aAmount">
+            <option value="">Select amount</option>
+            <option>₹50,000 – ₹1 Lakh</option>
+            <option>₹1 Lakh – ₹3 Lakhs</option>
+            <option>₹3 Lakhs – ₹5 Lakhs</option>
+            <option>₹5 Lakhs – ₹10 Lakhs</option>
+            <option>₹10 Lakhs – ₹20 Lakhs</option>
+            <option>Above ₹20 Lakhs</option>
+          </select>
+        </div>
+        <div class="ff">
+          <label>Employer Type *</label>
+          <select id="aEmpType">
+            <option value="">Select type</option>
+            <option>Government Employee</option>
+            <option>PSU / Defence</option>
+            <option>MNC / Large Company</option>
+            <option>Private Company</option>
+            <option>Teacher / Professor</option>
+            <option>Doctor / Medical Staff</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row-2">
+        <div class="ff">
+          <label>Monthly Salary *</label>
+          <select id="aSalary">
+            <option value="">Select salary</option>
+            <option>₹15,000 – ₹25,000</option>
+            <option>₹25,000 – ₹50,000</option>
+            <option>₹50,000 – ₹1 Lakh</option>
+            <option>Above ₹1 Lakh</option>
+          </select>
+        </div>
+        <div class="ff">
+          <label>Work Experience *</label>
+          <select id="aExp">
+            <option value="">Select experience</option>
+            <option>6 months – 1 year</option>
+            <option>1 – 3 years</option>
+            <option>3 – 5 years</option>
+            <option>5+ years</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row-2">
+        <div class="ff">
+          <label>Purpose *</label>
+          <select id="aPurpose">
+            <option value="">Select purpose</option>
+            <option>Home Renovation</option>
+            <option>Medical Expense</option>
+            <option>Education / Children</option>
+            <option>Wedding</option>
+            <option>Debt Consolidation</option>
+            <option>Vehicle Purchase</option>
+            <option>Travel</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="ff"><label>City</label><input type="text" id="aCity" placeholder="Your city"/></div>
+      </div>
+      <button class="submit-btn" id="applyBtn" onclick="submitApply()">
+        💼 Apply — Get Callback in 30 Min
+      </button>
+      <p class="secure-note">🔒 Safe & Secure · No spam · No CIBIL impact</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trustbar">
+  <div class="trustbar-inner">
+    <div class="ti">🏦 SBI</div>
+    <div class="ti">🏦 HDFC Bank</div>
+    <div class="ti">🏦 ICICI Bank</div>
+    <div class="ti">🏦 Axis Bank</div>
+    <div class="ti">🏦 Kotak Bank</div>
+    <div class="ti">🏦 Bajaj Finance</div>
+    <div class="ti">🏦 PNB</div>
+    <div class="ti">+15 More</div>
+  </div>
+</div>
+
+<!-- SPEED STATS -->
+<section class="section bg-blue">
+  <div class="section-inner">
+    <div class="section-head center">
+      <div class="section-tag">Why Salary Based Loan</div>
+      <h2 class="section-title">Salary slip = best loan deal guaranteed</h2>
+      <p class="section-sub">Salaried employees get preferential treatment from banks. Your stable income means lower rates, higher amounts, and faster approval.</p>
+    </div>
+    <div class="speed-grid">
+      <div class="speed-card"><div class="speed-num">10.49<span class="speed-unit">% P.A.</span></div><div class="speed-label">Lowest interest rate for government salaried employees</div></div>
+      <div class="speed-card"><div class="speed-num">₹40<span class="speed-unit">LAKHS</span></div><div class="speed-label">Maximum loan amount for high-salary profiles</div></div>
+      <div class="speed-card"><div class="speed-num">4<span class="speed-unit">HOURS</span></div><div class="speed-label">Average approval time for salaried applications</div></div>
+      <div class="speed-card"><div class="speed-num">60<span class="speed-unit">MONTHS</span></div><div class="speed-label">Flexible repayment up to 5 years tenure</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SALARY SLABS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-head center">
+      <div class="section-tag">Salary Slabs</div>
+      <h2 class="section-title">How much can you get based on salary?</h2>
+      <p class="section-sub">Loan eligibility directly depends on your monthly take-home salary. Check your slab below.</p>
+    </div>
+    <div class="slab-grid">
+      <div class="slab-card">
+        <div class="slab-salary">₹15K – ₹25K / month</div>
+        <h3>Entry Level Salaried</h3>
+        <p>Get up to ₹1.5 Lakhs. KreditBee, PaySense, Bajaj Finance best options. Higher EMI tenure recommended.</p>
+        <span class="slab-tag">Up to ₹1.5L</span>
+      </div>
+      <div class="slab-card">
+        <div class="slab-salary">₹25K – ₹50K / month</div>
+        <h3>Mid-Level Salaried</h3>
+        <p>Get up to ₹5 Lakhs from banks like ICICI, Axis, HDFC at competitive rates. Fast processing guaranteed.</p>
+        <span class="slab-tag">Up to ₹5L</span>
+      </div>
+      <div class="slab-card">
+        <div class="slab-salary">₹50K – ₹1L / month</div>
+        <h3>Senior / Manager Level</h3>
+        <p>Get ₹5L–₹15L at rates starting 10.75%. SBI, HDFC, ICICI preferred lenders. Pre-approved offers possible.</p>
+        <span class="slab-tag">Up to ₹15L</span>
+      </div>
+      <div class="slab-card">
+        <div class="slab-salary">Above ₹1L / month</div>
+        <h3>High Income Salaried</h3>
+        <p>Upto ₹40L personal loan with best rates. Pre-approved offers, relationship manager support, top-up options.</p>
+        <span class="slab-tag">Up to ₹40L</span>
+      </div>
+      <div class="slab-card">
+        <div class="slab-salary">Govt / PSU Employee</div>
+        <h3>Government Staff Special</h3>
+        <p>Lowest rates in market. SBI, PNB, Canara special schemes. Job security = maximum loan eligibility.</p>
+        <span class="slab-tag">Lowest Rate</span>
+      </div>
+      <div class="slab-card">
+        <div class="slab-salary">Teacher / Doctor</div>
+        <h3>Professional Salaried</h3>
+        <p>Special category with preferred rates. Higher loan multiples — up to 20x monthly salary for doctors.</p>
+        <span class="slab-tag">Special Scheme</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section bg-light">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-tag">Key Benefits</div>
+      <h2 class="section-title">Why salaried loan is the best deal.</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card"><div class="feat-icon">📉</div><div><h3>Lowest Interest Rates</h3><p>Salaried profiles get rates from 10.49% — much lower than self-employed or instant loan options.</p></div></div>
+      <div class="feat-card"><div class="feat-icon">💰</div><div><h3>Higher Loan Amounts</h3><p>Get up to 20–25x your monthly salary as loan. Stable income proof = banks trust you more.</p></div></div>
+      <div class="feat-card"><div class="feat-icon">⚡</div><div><h3>Faster Approval</h3><p>Salary slip + 3 months bank statement — that's all. No long paperwork, no office visits required.</p></div></div>
+      <div class="feat-card"><div class="feat-icon">🔄</div><div><h3>Longer Repayment</h3><p>Choose EMI tenure from 12 to 60 months. Smaller EMI, easier on monthly budget.</p></div></div>
+      <div class="feat-card"><div class="feat-icon">🏦</div><div><h3>Pre-Approved Offers</h3><p>Existing bank customers often get pre-approved salary loans — check instantly via WhatsApp.</p></div></div>
+      <div class="feat-card"><div class="feat-icon">🆓</div><div><h3>Zero Service Fee</h3><p>Our DSA consultation is 100% free. We earn commission from the bank — you pay nothing extra.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EMI CALCULATOR -->
+<section class="section" id="emi">
+  <div class="section-inner">
+    <div class="emi-wrap">
+      <div class="emi-left">
+        <div class="section-tag">EMI Calculator</div>
+        <h2>Plan your salary loan repayment</h2>
+        <p>Check your EMI before applying. Salaried profiles get the most flexible repayment options.</p>
+        <div class="quick-rates">
+          <div class="qr"><div class="qr-label">Lowest Rate</div><div class="qr-val">10.49%</div><div class="qr-note">Govt employee · Excellent CIBIL</div></div>
+          <div class="qr"><div class="qr-label">Max Amount</div><div class="qr-val">₹40 Lakhs</div><div class="qr-note">High-salary profiles</div></div>
+          <div class="qr"><div class="qr-label">Min Tenure</div><div class="qr-val">12 Months</div><div class="qr-note">1 year repayment</div></div>
+          <div class="qr"><div class="qr-label">Max Tenure</div><div class="qr-val">5 Years</div><div class="qr-note">60 months EMI</div></div>
+        </div>
+      </div>
+      <div class="emi-card">
+        <h3>💼 Salary Loan EMI Calculator</h3>
+        <div class="field-row">
+          <label>Loan Amount <strong id="dAmt">₹3,00,000</strong></label>
+          <input type="range" id="rAmt" min="50000" max="4000000" step="10000" value="300000" oninput="calcEMI()">
+        </div>
+        <div class="field-row">
+          <label>Interest Rate <strong id="dRate">12%</strong></label>
+          <input type="range" id="rRate" min="10" max="24" step="0.25" value="12" oninput="calcEMI()">
+        </div>
+        <div class="field-row">
+          <label>Tenure <strong id="dTenure">24 Months</strong></label>
+          <input type="range" id="rTenure" min="12" max="60" step="6" value="24" oninput="calcEMI()">
+        </div>
+        <div class="emi-result">
+          <div class="emi-label">Monthly EMI</div>
+          <div class="emi-amount" id="emiOut">—</div>
+          <div class="emi-bd">
+            <div class="eb"><div class="eb-l">Principal</div><div class="eb-v" id="ebP">—</div></div>
+            <div class="eb"><div class="eb-l">Total Interest</div><div class="eb-v" id="ebI">—</div></div>
+            <div class="eb"><div class="eb-l">Total Payable</div><div class="eb-v" id="ebT">—</div></div>
+            <div class="eb"><div class="eb-l">Processing Fee</div><div class="eb-v">0.5–2%</div></div>
+          </div>
+        </div>
+        <button class="emi-apply" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Apply for This Loan →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTS -->
+<section class="section bg-light">
+  <div class="section-inner">
+    <div class="section-head center">
+      <div class="section-tag">Documents Required</div>
+      <h2 class="section-title">Just 4 documents — all accepted on WhatsApp</h2>
+      <p class="section-sub">Salaried loans require minimal paperwork. Digital copies sent via WhatsApp is sufficient for most banks.</p>
+    </div>
+    <div class="docs-row">
+      <div class="doc-box">
+        <h3>🪪 Identity & Address</h3>
+        <div class="doc-item">Aadhaar Card (mandatory)</div>
+        <div class="doc-item">PAN Card (mandatory)</div>
+        <div class="doc-item">Passport / Voter ID (optional extra)</div>
+      </div>
+      <div class="doc-box">
+        <h3>💰 Income & Employment</h3>
+        <div class="doc-item">Last 3 months Salary Slips</div>
+        <div class="doc-item">Current employer offer letter / ID</div>
+        <div class="doc-item">Form 16 / ITR (for higher amounts)</div>
+      </div>
+      <div class="doc-box">
+        <h3>🏦 Bank & Other</h3>
+        <div class="doc-item">Last 3 months Bank Statement (salary account)</div>
+        <div class="doc-item">Passport size photo (1)</div>
+        <div class="doc-item">Office address proof (for large amounts)</div>
+      </div>
+    </div>
+    <div class="doc-tip">
+      <span>💡</span>
+      <strong>Tip from DSA Loan Agent:</strong> WhatsApp your last salary slip and Aadhaar to +91 97053 17513 — within 15 minutes we'll tell you exact loan amount you qualify for and at what rate. No commitment required!
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-head center">
+      <div class="section-tag">How It Works</div>
+      <h2 class="section-title">Salary loan — approved in 5 steps</h2>
+    </div>
+    <div class="process-grid">
+      <div class="proc-item"><div class="proc-num">1</div><h3>Share Salary Slip</h3><p>WhatsApp salary slip & Aadhaar to Akhil</p><span class="proc-time">2 minutes</span></div>
+      <div class="proc-item"><div class="proc-num">2</div><h3>Eligibility Check</h3><p>We calculate max loan & best rate</p><span class="proc-time">15 minutes</span></div>
+      <div class="proc-item"><div class="proc-num">3</div><h3>Lender Selection</h3><p>Best bank for your salary & profile</p><span class="proc-time">20 minutes</span></div>
+      <div class="proc-item"><div class="proc-num">4</div><h3>Bank Processing</h3><p>Digital application & quick approval</p><span class="proc-time">2–4 hours</span></div>
+      <div class="proc-item"><div class="proc-num">5</div><h3>Disbursal</h3><p>Money credited to salary account</p><span class="proc-time">Same day</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- LENDERS DARK -->
+<section class="section bg-dark">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-tag">Salary Loan Partners</div>
+      <h2 class="section-title">Top banks for salaried employees</h2>
+      <p class="section-sub">We work with 20+ banks and NBFCs to get you the best rate based on your salary and employer category.</p>
+    </div>
+    <div class="lenders-grid">
+      <div class="lender-card"><h4>🏦 SBI <span class="badge-fast">GOVT SPECIAL</span></h4><p>Lowest rate for govt employees</p><div class="lender-rate">10.55% – 15.05%</div></div>
+      <div class="lender-card"><h4>🏦 HDFC Bank <span class="badge-fast">FASTEST</span></h4><p>Pre-approved for salary account holders</p><div class="lender-rate">10.75% – 21.45%</div></div>
+      <div class="lender-card"><h4>🏦 ICICI Bank <span class="badge-fast">FAST</span></h4><p>Insta loan for salaried, same day</p><div class="lender-rate">10.75% – 19%</div></div>
+      <div class="lender-card"><h4>🏦 Axis Bank <span class="badge-fast">FAST</span></h4><p>Best for MNC & corporate salaried</p><div class="lender-rate">10.49% – 22%</div></div>
+      <div class="lender-card"><h4>🏦 Kotak Bank <span class="badge-easy">LOW FEE</span></h4><p>Low processing fee option</p><div class="lender-rate">10.99% – 24%</div></div>
+      <div class="lender-card"><h4>🏦 PNB</h4><p>Special scheme for govt employees</p><div class="lender-rate">10.40% – 16.95%</div></div>
+      <div class="lender-card"><h4>💳 Bajaj Finance <span class="badge-easy">EASY</span></h4><p>For lower salary, higher approvals</p><div class="lender-rate">11% – 26%</div></div>
+      <div class="lender-card"><h4>🏦 IndusInd Bank</h4><p>Good for private sector salaried</p><div class="lender-rate">10.49% – 26%</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ELIGIBILITY TABLE -->
+<section class="section bg-blue">
+  <div class="section-inner">
+    <div class="section-head center">
+      <div class="section-tag">Eligibility</div>
+      <h2 class="section-title">Salary loan eligibility criteria</h2>
+    </div>
+    <div style="overflow-x:auto">
+    <table class="elig-table">
+      <thead>
+        <tr><th>Criteria</th><th>Government Employee</th><th>Private / MNC</th><th>Other Salaried</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Minimum Age</td><td>21 years</td><td>21 years</td><td>23 years</td></tr>
+        <tr><td>Minimum Salary</td><td>₹15,000/month</td><td>₹20,000/month</td><td>₹15,000/month</td></tr>
+        <tr><td>CIBIL Score</td><td class="check">700+</td><td class="check">680+</td><td class="check">650+</td></tr>
+        <tr><td>Work Experience</td><td>6 months in service</td><td>1 year + 6 months current</td><td>1 year current job</td></tr>
+        <tr><td>Max Loan Amount</td><td>Up to ₹40 Lakhs</td><td>Up to ₹25 Lakhs</td><td>Up to ₹10 Lakhs</td></tr>
+        <tr><td>Interest Rate</td><td class="check">From 10.49%</td><td>From 10.75%</td><td>From 11.5%</td></tr>
+        <tr><td>Approval Speed</td><td class="check">Same day</td><td class="check">4–8 hours</td><td>1 working day</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-head center">
+      <div class="section-tag">Success Stories</div>
+      <h2 class="section-title">Real salaried employees. Real approvals.</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">Nenu government teacher. Bank lo try chesanu but process chala slow. DSA Loan Agent ki call chesanu — same day SBI lo ₹6 Lakhs approve ayyindi. Rate kuda 10.6% only. Excellent service!</p>
+        <div class="testi-author"><div class="tav">RD</div><div><div class="tname">Ramadevi Naidu</div><div class="trole">Govt Teacher · ₹6L Salary Loan · Vijayawada</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">IT company lo work chestanu, salary ₹75,000. Akhil garu HDFC pre-approved offer check chesaru — ₹12 Lakhs at 11.2% ready ga undi. Paper work chala fast ga complete ayyindi.</p>
+        <div class="testi-author"><div class="tav">VK</div><div><div class="tname">Venkat Kishore</div><div class="trole">IT Salaried · ₹12L Loan · Hyderabad</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">Bank reject chesindi because credit score 665 undi. DSA Loan Agent Bajaj Finance try chesaru — ₹2.5 Lakhs approve ayyindi. Home renovation complete chesanu. Chala happy!</p>
+        <div class="testi-author"><div class="tav">PS</div><div><div class="tname">Praveen Sai</div><div class="trole">Private Salaried · ₹2.5L Loan · Nellore</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section bg-light">
+  <div class="section-inner">
+    <div class="section-head center">
+      <div class="section-tag">FAQs</div>
+      <h2 class="section-title">Salary Loan — Common Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Salary based loan ki minimum salary ఎంత ఉండాలి? <span>+</span></div>
+        <div class="faq-a">Minimum ₹15,000 per month net take-home salary ఉంటే eligible అవుతారు. ₹15K–₹25K range లో KreditBee, PaySense, Bajaj Finance options ఉన్నాయి. ₹25K+ అయితే banks (HDFC, ICICI, Axis) best rates offer చేస్తాయి. Government employees కి ₹15K salary తో కూడా SBI లో ₹3–4L వస్తుంది.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Monthly salary ఎంత అయితే ఎంత loan వస్తుంది? <span>+</span></div>
+        <div class="faq-a">General rule: net monthly salary × 15–20 times loan amount. Example: ₹30,000 salary → ₹4.5L – ₹6L loan. Government employees కి × 20–25 times వస్తుంది. Exact amount CIBIL score మరియు existing EMIs పై ఆధారపడుతుంది. Akhil ki WhatsApp చేస్తే exact eligibility 15 minutes లో చెప్తారు.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Salary account ఏ bank లో ఉందో same bank లో apply చేయాలా? <span>+</span></div>
+        <div class="faq-a">అక్కర్లేదు! మీరు ఏ bank లో salary account ఉన్నా, మేము best rate ఇచ్చే bank లో apply చేయగలం. Existing salary account bank లో pre-approved offers ఉంటే వాటిని check చేసి compare చేస్తాం. మీకు best deal guarantee.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Job change chesanu — salary loan possible అవుతుందా? <span>+</span></div>
+        <div class="faq-a">Current job లో minimum 6 months experience ఉంటే most banks accept చేస్తాయి. Total work experience 2+ years ఉంటే better. Job change recent గా జరిగితే (3 months లోపు) కొన్ని banks reject చేయవచ్చు — కానీ NBFCs (Bajaj Finance etc.) flexible గా ఉంటాయి. మీ situation WhatsApp లో share చేయండి — best option suggest చేస్తాం.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Government employee ki special rate ఏం ఉంటుంది? <span>+</span></div>
+        <div class="faq-a">Government employees ki SBI మరియు PNB లో special salary loan schemes ఉన్నాయి. Rate 10.49% – 11.5% range లో ఉంటుంది — market లో lowest. Job security guarantee ఉన్నందుకు banks highest trust ఇస్తాయి. Max loan 40x monthly salary వరకూ possible. Defence personnel కి separate special schemes కూడా ఉన్నాయి.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">DSA Loan Agent ki apply cheyyataniki ఎంత charge cheyataaru? <span>+</span></div>
+        <div class="faq-a">Zero! మా service పూర్తిగా free. మేము bank/NBFC నుండి commission తీసుకుంటాం — మీ loan amount మీద ఒక్క పైసా extra charge చేయం. Bank లో directly apply చేస్తే కూడా అదే processing fee — కానీ ఇక్కడ better rate negotiate చేయగలం.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <h2>💼 Salary slip undaa? Best rate lock cheyyandi!</h2>
+  <p>DSA Loan Agent team 9 AM – 8 PM available. WhatsApp 24x7. Salary loan same day approved for eligible salaried profiles.</p>
+  <div class="cta-actions">
+    <a href="#apply" class="btn-white">💼 Apply Now — Free</a>
+    <a href="https://wa.me/919705317513" target="_blank" class="btn-outline-white">💬 WhatsApp: +91 97053 17513</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="color:#fff;font-size:1.1rem">DSA <span>Loan</span> Agent</a>
+      <p>Your trusted loan & insurance partner across AP & Telangana. Quick approvals, best rates, free service.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Salary Loans</h4>
+      <a href="#apply">Apply Salary Loan</a>
+      <a href="#emi">EMI Calculator</a>
+      <a href="instant-loan.html">Instant Loan</a>
+      <a href="personal-loan.html">Personal Loan</a>
+    </div>
+    <div class="footer-col">
+      <h4>Other Services</h4>
+      <a href="index.html#services">Home Loan</a>
+      <a href="index.html#services">Business Loan</a>
+      <a href="index.html#services">Vehicle Loan</a>
+      <a href="index.html#services">Insurance</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:+919705317513">📞 +91 97053 17513</a>
+      <a href="https://wa.me/919705317513">💬 WhatsApp Now</a>
+      <a href="index.html#contact">Apply Online</a>
+      <a href="index.html">Back to Home</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 DSA Loan Agent · dsaloanagent.in</span>
+    <span>Rates indicative. Actual rates depend on lender & profile assessment.</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919705317513" target="_blank">💬</a>
+<a class="call-float" href="tel:+919705317513">📞</a>
+<div class="toast" id="toast"></div>
+
+<script>
+const SHEET_URL='YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+
+// DATE
+const now=new Date();
+document.getElementById('todayDate').textContent=now.toLocaleDateString('en-IN',{day:'numeric',month:'long'});
+
+// COUNTDOWN to midnight
+function updateTimer(){
+  const n=new Date(),mid=new Date();
+  mid.setHours(23,59,59,0);
+  let diff=Math.max(0,Math.floor((mid-n)/1000));
+  const h=Math.floor(diff/3600);diff%=3600;
+  const m=Math.floor(diff/60);const s=diff%60;
+  document.getElementById('th').textContent=String(h).padStart(2,'0');
+  document.getElementById('tm').textContent=String(m).padStart(2,'0');
+  document.getElementById('ts').textContent=String(s).padStart(2,'0');
+}
+updateTimer();setInterval(updateTimer,1000);
+
+// EMI
+function inr(n){return '₹'+Math.round(n).toLocaleString('en-IN')}
+function calcEMI(){
+  const P=+document.getElementById('rAmt').value;
+  const rA=+document.getElementById('rRate').value;
+  const mo=+document.getElementById('rTenure').value;
+  document.getElementById('dAmt').textContent=inr(P);
+  document.getElementById('dRate').textContent=rA+'%';
+  document.getElementById('dTenure').textContent=mo+' Month'+(mo>1?'s':'');
+  const r=rA/12/100;
+  const emi=(P*r*Math.pow(1+r,mo))/(Math.pow(1+r,mo)-1);
+  const total=emi*mo,interest=total-P;
+  document.getElementById('emiOut').textContent=inr(emi);
+  document.getElementById('ebP').textContent=inr(P);
+  document.getElementById('ebI').textContent=inr(interest);
+  document.getElementById('ebT').textContent=inr(total);
+}
+calcEMI();
+
+// FAQ
+function toggleFaq(el){
+  const item=el.parentElement;
+  document.querySelectorAll('.faq-item.open').forEach(i=>{if(i!==item)i.classList.remove('open')});
+  item.classList.toggle('open');
+}
+
+// TOAST
+function showToast(msg,err){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.className='toast show'+(err?' error':'');
+  setTimeout(()=>t.className='toast',4500);
+}
+
+// SUBMIT
+async function submitApply(){
+  const name=document.getElementById('aName').value.trim();
+  const phone=document.getElementById('aPhone').value.trim();
+  const amount=document.getElementById('aAmount').value;
+  const empType=document.getElementById('aEmpType').value;
+  const salary=document.getElementById('aSalary').value;
+  const exp=document.getElementById('aExp').value;
+  const purpose=document.getElementById('aPurpose').value;
+  const city=document.getElementById('aCity').value.trim();
+
+  if(!name||!phone||!amount||!empType||!salary||!exp||!purpose){
+    showToast('⚠️ Please fill all required fields',true);return;
+  }
+  if(!/^[6-9]\d{9}$/.test(phone.replace(/[\s+\-]/g,'').slice(-10))){
+    showToast('⚠️ Enter valid 10-digit mobile number',true);return;
+  }
+
+  const btn=document.getElementById('applyBtn');
+  btn.disabled=true;
+  btn.innerHTML='<span class="spinner"></span> Submitting...';
+
+  const payload={
+    timestamp:new Date().toLocaleString('en-IN',{timeZone:'Asia/Kolkata'}),
+    name,phone,service:'Salary Based Loan',amount,
+    employer_type:empType,monthly_salary:salary,
+    experience:exp,purpose,city,
+    source:'Salary Loan Page'
+  };
+
+  try{
+    if(SHEET_URL==='YOUR_GOOGLE_APPS_SCRIPT_URL_HERE'){
+      await new Promise(r=>setTimeout(r,1200));
+    } else {
+      await fetch(SHEET_URL,{method:'POST',body:JSON.stringify(payload)});
+    }
+    showToast('✅ Applied! You\'ll get a call within 30 minutes.');
+    ['aName','aPhone','aCity'].forEach(id=>document.getElementById(id).value='');
+    ['aAmount','aEmpType','aSalary','aExp','aPurpose'].forEach(id=>document.getElementById(id).selectedIndex=0);
+  } catch(e){
+    showToast('❌ Error. Please WhatsApp us directly.',true);
+  } finally{
+    btn.disabled=false;
+    btn.innerHTML='💼 Apply — Get Callback in 30 Min';
+  }
+}
+</script>
+</body>
+</html>
