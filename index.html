@@ -108,7 +108,7 @@ nav{
 /* MEGA MENU */
 .mega{
   position:fixed;left:0;right:0;
-  top:64px; /* will be set by topbar height + nav height */
+  top:64px;
   background:#fff;
   border-top:2px solid var(--blue-mid);
   border-bottom:1px solid var(--gray-100);
@@ -510,6 +510,9 @@ footer{background:var(--blue-dark);color:rgba(255,255,255,0.5);padding:3.5rem 5%
 
     <ul class="nav-menu">
 
+      <!-- ✅ HOME LINK ADDED HERE -->
+      <li><a href="#home" class="nav-link">Home</a></li>
+
       <!-- LOANS MEGA -->
       <li class="nav-item">
         <button class="nav-link">Loans <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
@@ -638,6 +641,11 @@ footer{background:var(--blue-dark);color:rgba(255,255,255,0.5);padding:3.5rem 5%
   <div class="mobile-close">
     <span class="nav-logo">DSA <span>Loan</span> Agent</span>
     <button onclick="toggleMobile()">✕</button>
+  </div>
+  <!-- ✅ HOME LINK IN MOBILE MENU -->
+  <div class="mobile-section">
+    <h3>Menu</h3>
+    <a href="#home" onclick="toggleMobile()">🏠 Home</a>
   </div>
   <div class="mobile-section">
     <h3>Personal & Retail Loans</h3>
@@ -1049,9 +1057,6 @@ footer{background:var(--blue-dark);color:rgba(255,255,255,0.5);padding:3.5rem 5%
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── REPLACE THIS URL after Google Apps Script deployment ───
-const SHEET_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
-
 // EMI CALCULATOR
 function inr(n){return '₹'+Math.round(n).toLocaleString('en-IN')}
 function calcEMI(){
@@ -1085,54 +1090,6 @@ function showToast(msg,isErr){
 }
 
 // SUBMIT LEAD → GOOGLE SHEETS
-async function submitLead(){
-  const name=document.getElementById('fName').value.trim();
-  const phone=document.getElementById('fPhone').value.trim();
-  const service=document.getElementById('fService').value;
-  const amount=document.getElementById('fAmount').value;
-  const emp=document.getElementById('fEmp').value;
-  const city=document.getElementById('fCity').value.trim();
-  const msg=document.getElementById('fMsg').value.trim();
-
-  if(!name||!phone||!service||!amount){
-    showToast('⚠️ Please fill all required fields',true);return;
-  }
-  if(!/^[6-9]\d{9}$/.test(phone.replace(/[\s+\-]/g,'').slice(-10))){
-    showToast('⚠️ Please enter a valid mobile number',true);return;
-  }
-
-  const btn=document.getElementById('submitBtn');
-  btn.disabled=true;
-  btn.innerHTML='<div class="spinner"></div> Sending...';
-
-  const payload={
-    timestamp:new Date().toLocaleString('en-IN',{timeZone:'Asia/Kolkata'}),
-    name,phone,service,amount,employment:emp,city,message:msg,
-    source:'Website Form'
-  };
-
-  try{
-    if(SHEET_URL==='YOUR_GOOGLE_APPS_SCRIPT_URL_HERE'){
-      // DEMO MODE — no actual sheet connected yet
-      await new Promise(r=>setTimeout(r,1200));
-      showToast('✅ Request submitted! Agent will call you within 30 mins.');
-    } else {
-      await fetch(SHEET_URL,{method:'POST',body:JSON.stringify(payload)});
-      showToast('✅ Request submitted! Agent will call you within 30 mins.');
-    }
-    // Clear form
-    ['fName','fPhone','fCity','fMsg'].forEach(id=>document.getElementById(id).value='');
-    ['fService','fAmount','fEmp'].forEach(id=>document.getElementById(id).selectedIndex=0);
-  } catch(e){
-    showToast('❌ Something went wrong. Please WhatsApp us directly.',true);
-  } finally{
-    btn.disabled=false;
-    btn.innerHTML='📩 Send My Details to Agent';
-  }
-}
-</script>
-
-<script>
 function submitLead() {
   const name = document.getElementById('fName').value.trim();
   const phone = document.getElementById('fPhone').value.trim();
@@ -1143,42 +1100,51 @@ function submitLead() {
   const message = document.getElementById('fMsg').value.trim();
 
   if (!name || !phone || !service || !amount) {
-    alert('దయచేసి అన్ని required (*) fields fill చేయండి.');
+    showToast('⚠️ దయచేసి అన్ని required (*) fields fill చేయండి.', true);
+    return;
+  }
+
+  if (!/^[6-9]\d{9}$/.test(phone.replace(/[\s+\-]/g, '').slice(-10))) {
+    showToast('⚠️ Please enter a valid mobile number', true);
     return;
   }
 
   const btn = document.getElementById('submitBtn');
   btn.disabled = true;
-  btn.innerText = 'Sending...';
+  btn.innerHTML = '<div class="spinner"></div> Sending...';
 
-  const payload = { name, phone, service, amount, employment, city, message };
+  const payload = {
+    timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+    name, phone, service, amount, employment, city, message,
+    source: 'Website Form'
+  };
 
   fetch('https://script.google.com/macros/s/AKfycbxeK0fvlbU5MZXPCCQDI2Ri6O6SJsBN9wnii_iIYiNmRFboZhF31D1Cs_FWFx9OQ8adUg/exec', {
     method: 'POST',
     headers: { 'Content-Type': 'text/plain' },
     body: JSON.stringify(payload)
   })
-    .then(res => res.json())
-    .then(data => {
-      alert('✅ Thank you! Agent will call you within 30 minutes.');
-      document.getElementById('fName').value = '';
-      document.getElementById('fPhone').value = '';
-      document.getElementById('fService').value = '';
-      document.getElementById('fAmount').value = '';
-      document.getElementById('fEmp').value = '';
-      document.getElementById('fCity').value = '';
-      document.getElementById('fMsg').value = '';
-      btn.disabled = false;
-      btn.innerText = '📩 Send My Details to Agent';
-    })
-    .catch(err => {
-      alert('❌ Error sending. దయచేసి మళ్ళీ try చేయండి.');
-      console.error(err);
-      btn.disabled = false;
-      btn.innerText = '📩 Send My Details to Agent';
-    });
+  .then(res => res.json())
+  .then(data => {
+    showToast('✅ Thank you! Agent will call you within 30 minutes.');
+    document.getElementById('fName').value = '';
+    document.getElementById('fPhone').value = '';
+    document.getElementById('fService').selectedIndex = 0;
+    document.getElementById('fAmount').selectedIndex = 0;
+    document.getElementById('fEmp').selectedIndex = 0;
+    document.getElementById('fCity').value = '';
+    document.getElementById('fMsg').value = '';
+    btn.disabled = false;
+    btn.innerHTML = '📩 Send My Details to Agent';
+  })
+  .catch(err => {
+    showToast('❌ Error sending. దయచేసి మళ్ళీ try చేయండి.', true);
+    console.error(err);
+    btn.disabled = false;
+    btn.innerHTML = '📩 Send My Details to Agent';
+  });
 }
 </script>
-  
+
 </body>
 </html>
