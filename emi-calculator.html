@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>EMI Calculator Online – Loan EMI, Interest & Amortization | DSA Loan Agent AP & Telangana</title>
+<meta name="description" content="Free online EMI Calculator for Home Loan, Personal Loan, Car Loan & Business Loan. Instantly calculate Monthly EMI, Total Interest, Total Payment & full Amortization Schedule. Trusted by 10,000+ borrowers in Andhra Pradesh & Telangana."/>
+<meta name="keywords" content="EMI calculator, loan EMI calculator online, home loan EMI calculator, personal loan EMI Hyderabad, car loan EMI calculator, EMI formula calculator, amortization schedule, DSA loan agent AP Telangana"/>
+<meta name="robots" content="index, follow"/>
+<meta property="og:title" content="Free EMI Calculator | DSA Loan Agent – AP & Telangana"/>
+<meta property="og:description" content="Calculate Monthly EMI, Total Interest, Total Payable & Amortization Schedule instantly. Free, fast, and accurate EMI calculator for all loan types."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://dsaloanagent.in/emi-calculator.html"/>
+<link rel="canonical" href="https://dsaloanagent.in/emi-calculator.html"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue-dark:#0D2B6E;--blue:#1A47B8;--blue-mid:#2563EB;--blue-bright:#3B82F6;
+  --blue-light:#EFF6FF;--blue-pale:#DBEAFE;--accent:#F59E0B;--white:#FFFFFF;
+  --gray-100:#F1F5F9;--gray-300:#CBD5E1;--gray-500:#64748B;--gray-700:#334155;
+  --gray-900:#0F172A;--radius:10px;
+  --shadow-sm:0 1px 3px rgba(0,0,0,0.08);--shadow:0 4px 16px rgba(13,43,110,0.12);
+  --shadow-lg:0 12px 40px rgba(13,43,110,0.18);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--gray-900);overflow-x:hidden}
+/* TOPBAR */
+.topbar{background:var(--blue-dark);color:rgba(255,255,255,0.75);font-size:0.75rem;padding:0.4rem 5%;display:flex;justify-content:space-between;align-items:center;}
+.topbar a{color:rgba(255,255,255,0.75);text-decoration:none;display:inline-flex;align-items:center;gap:0.3rem;transition:color 0.15s}
+.topbar a:hover{color:#fff}
+.topbar-right{display:flex;gap:1.5rem}
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--gray-100);box-shadow:var(--shadow-sm);}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:64px;}
+.nav-logo{font-family:'Poppins',sans-serif;font-size:1.25rem;font-weight:900;color:var(--blue-dark);text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:0.5rem;}
+.nav-logo span{color:var(--blue-mid)}
+.nav-menu{display:flex;align-items:center;gap:0;list-style:none}
+.nav-item{position:relative}
+.nav-link{display:flex;align-items:center;gap:0.3rem;padding:0 0.9rem;height:64px;font-size:0.83rem;font-weight:600;color:var(--gray-700);text-decoration:none;border-bottom:2.5px solid transparent;transition:color 0.15s,border-color 0.15s;white-space:nowrap;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none;font-family:'Inter',sans-serif;}
+.nav-link:hover,.nav-item:hover>.nav-link,.nav-link.active{color:var(--blue-mid);border-bottom-color:var(--blue-mid)}
+.nav-link svg{width:14px;height:14px;transition:transform 0.2s;flex-shrink:0}
+.nav-item:hover>.nav-link svg{transform:rotate(180deg)}
+.dropdown{position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--gray-100);border-radius:var(--radius);box-shadow:var(--shadow-lg);padding:0.5rem;min-width:200px;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity 0.2s,transform 0.2s,visibility 0.2s;z-index:300;}
+.nav-item:hover>.dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown a{display:flex;align-items:center;gap:0.4rem;padding:0.45rem 0.75rem;font-size:0.82rem;color:var(--gray-700);text-decoration:none;border-radius:6px;transition:background 0.15s,color 0.15s;}
+.dropdown a:hover{background:var(--blue-light);color:var(--blue-mid)}
+.dropdown a::before{content:'›';color:var(--blue-bright);font-weight:700}
+.mega{position:fixed;left:0;right:0;top:64px;background:#fff;border-top:2px solid var(--blue-mid);border-bottom:1px solid var(--gray-100);box-shadow:var(--shadow-lg);padding:2rem 5%;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity 0.2s,transform 0.2s,visibility 0.2s;z-index:300;}
+.nav-item:hover>.mega{opacity:1;visibility:visible;transform:translateY(0)}
+.mega-inner{max-width:1280px;margin:0 auto;display:grid;gap:2rem}
+.mega-loans{grid-template-columns:repeat(4,1fr)}
+.mega-insurance{grid-template-columns:repeat(4,1fr)}
+.mega-col h4{font-size:0.7rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--blue-mid);margin-bottom:0.75rem;padding-bottom:0.5rem;border-bottom:1px solid var(--blue-pale);}
+.mega-col a{display:flex;align-items:center;gap:0.4rem;padding:0.35rem 0.4rem;font-size:0.82rem;color:var(--gray-700);text-decoration:none;border-radius:6px;transition:background 0.15s,color 0.15s;}
+.mega-col a:hover{background:var(--blue-light);color:var(--blue-mid)}
+.mega-col a::before{content:'›';color:var(--blue-bright);font-weight:700}
+.nav-cta{background:var(--blue-mid);color:#fff !important;padding:0.55rem 1.25rem !important;border-radius:8px;height:auto !important;border-bottom:none !important;font-size:0.82rem !important;transition:background 0.15s !important;display:inline-flex !important;align-items:center;gap:0.3rem;}
+.nav-cta:hover{background:var(--blue-dark) !important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--gray-700);border-radius:2px;transition:all 0.25s}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;z-index:500;overflow-y:auto;padding:1.5rem 5%;}
+.mobile-menu.open{display:block}
+.mobile-close{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;}
+.mobile-close button{background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--gray-700)}
+.mobile-section{margin-bottom:1.5rem}
+.mobile-section h3{font-size:0.7rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue-mid);margin-bottom:0.5rem;}
+.mobile-section a{display:block;padding:0.5rem 0;font-size:0.875rem;color:var(--gray-700);text-decoration:none;border-bottom:1px solid var(--gray-100);}
+/* BREADCRUMB */
+.breadcrumb{background:var(--blue-light);padding:0.6rem 5%;font-size:0.75rem;color:var(--gray-500);}
+.breadcrumb a{color:var(--blue-mid);text-decoration:none;}
+.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb span{margin:0 0.4rem;color:var(--gray-300)}
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 55%,#1e5fc4 100%);padding:60px 5% 48px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+.hero-inner{max-width:1280px;margin:0 auto;position:relative;z-index:1;text-align:center;}
+.hero-tag{display:inline-flex;align-items:center;gap:0.4rem;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:0.3rem 0.8rem;border-radius:50px;margin-bottom:1.25rem;}
+.hero-tag::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%}
+.hero h1{font-family:'Poppins',sans-serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:900;color:#fff;line-height:1.15;margin-bottom:1rem;}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-sub{color:rgba(255,255,255,0.75);font-size:0.97rem;line-height:1.75;margin-bottom:1.75rem;max-width:640px;margin-left:auto;margin-right:auto;}
+.hero-pills{display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-bottom:2rem;}
+.hero-pill{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);font-size:0.78rem;font-weight:600;padding:0.35rem 0.9rem;border-radius:50px;}
+.hero-stats{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;}
+.hstat{border-left:2px solid rgba(255,255,255,0.25);padding-left:1rem;text-align:left;}
+.hstat-num{font-family:'Poppins',sans-serif;font-size:1.5rem;font-weight:900;color:var(--accent);line-height:1}
+.hstat-label{font-size:0.7rem;color:rgba(255,255,255,0.55);margin-top:0.2rem}
+/* SECTIONS */
+.section{padding:68px 5%}
+.section-inner{max-width:1280px;margin:0 auto}
+.section-tag{font-size:0.7rem;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--blue-mid);margin-bottom:0.5rem}
+.section-title{font-family:'Poppins',sans-serif;font-size:clamp(1.5rem,2.5vw,2.1rem);font-weight:900;color:var(--blue-dark);line-height:1.2;margin-bottom:0.75rem}
+.section-sub{color:var(--gray-500);font-size:0.93rem;line-height:1.7;max-width:560px}
+.section-head{margin-bottom:2.5rem}
+.section-head.center{text-align:center}
+.section-head.center .section-sub{margin:0 auto}
+.section-blue-bg{background:var(--blue-light)}
+.section-dark-bg{background:var(--blue-dark)}
+.section-dark-bg .section-tag{color:var(--accent)}
+.section-dark-bg .section-title{color:#fff}
+.section-dark-bg .section-sub{color:rgba(255,255,255,0.55)}
+.section-gray-bg{background:#F8FAFC}
+
+/* ═══ EMI CALCULATOR WIDGET ═══ */
+.calc-wrapper{max-width:1000px;margin:0 auto;background:#fff;border-radius:20px;box-shadow:var(--shadow-lg);overflow:hidden;border:1px solid var(--gray-100);}
+.calc-header{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));padding:1.5rem 2rem;display:flex;align-items:center;gap:0.75rem;}
+.calc-header h2{font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:800;color:#fff;margin:0;}
+.calc-header span{background:var(--accent);color:#fff;font-size:0.65rem;font-weight:800;padding:0.2rem 0.6rem;border-radius:50px;letter-spacing:0.5px;}
+.calc-body{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.calc-inputs{padding:2rem;border-right:1px solid var(--gray-100);}
+.calc-inputs h3{font-size:0.75rem;font-weight:800;color:var(--gray-500);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:1.5rem;}
+.input-group{margin-bottom:1.5rem;}
+.input-group label{display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;font-weight:700;color:var(--gray-700);margin-bottom:0.5rem;}
+.input-group label span{font-family:'Poppins',sans-serif;font-size:0.95rem;font-weight:900;color:var(--blue-mid);}
+.inp-row{display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem;}
+.inp-row input[type="number"]{flex:1;padding:0.65rem 0.875rem;border:1.5px solid var(--gray-300);border-radius:8px;font-family:'Inter',sans-serif;font-size:0.875rem;font-weight:600;color:var(--gray-900);outline:none;transition:border-color 0.15s;}
+.inp-row input[type="number"]:focus{border-color:var(--blue-mid);box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
+.inp-row input[type="number"]::-webkit-inner-spin-button,.inp-row input[type="number"]::-webkit-outer-spin-button{-webkit-appearance:none}
+.inp-prefix,.inp-suffix{background:var(--blue-light);border:1.5px solid var(--blue-pale);border-radius:8px;padding:0.65rem 0.75rem;font-size:0.78rem;font-weight:700;color:var(--blue-dark);white-space:nowrap;flex-shrink:0;}
+input[type="range"]{width:100%;height:4px;border-radius:4px;background:var(--gray-300);outline:none;appearance:none;cursor:pointer;}
+input[type="range"]::-webkit-slider-thumb{appearance:none;width:18px;height:18px;border-radius:50%;background:var(--blue-mid);border:3px solid #fff;box-shadow:0 0 0 2px var(--blue-mid);cursor:pointer;}
+input[type="range"]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--blue-mid);border:3px solid #fff;cursor:pointer;}
+.range-labels{display:flex;justify-content:space-between;font-size:0.65rem;color:var(--gray-500);margin-top:0.3rem;}
+.loan-type-tabs{display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:1.5rem;}
+.lt-tab{background:var(--gray-100);border:1.5px solid var(--gray-100);border-radius:6px;padding:0.35rem 0.7rem;font-size:0.72rem;font-weight:700;color:var(--gray-700);cursor:pointer;transition:all 0.15s;}
+.lt-tab.active{background:var(--blue-light);border-color:var(--blue-mid);color:var(--blue-mid);}
+/* RESULTS PANEL */
+.calc-results{padding:2rem;background:#FAFCFF;}
+.calc-results h3{font-size:0.75rem;font-weight:800;color:var(--gray-500);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:1.5rem;}
+.result-emi{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:1rem;text-align:center;}
+.result-emi .label{font-size:0.72rem;font-weight:700;color:rgba(255,255,255,0.65);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.3rem;}
+.result-emi .value{font-family:'Poppins',sans-serif;font-size:2rem;font-weight:900;color:#fff;line-height:1;}
+.result-emi .sub{font-size:0.7rem;color:rgba(255,255,255,0.5);margin-top:0.25rem;}
+.result-cards{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1.25rem;}
+.rc{background:#fff;border:1px solid var(--gray-100);border-radius:10px;padding:1rem;text-align:center;}
+.rc .rc-label{font-size:0.68rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.3rem;}
+.rc .rc-val{font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:900;color:var(--blue-dark);}
+.rc.accent-card .rc-val{color:#EF4444;}
+.rc.green-card .rc-val{color:#16A34A;}
+/* DONUT CHART */
+.donut-wrap{display:flex;align-items:center;gap:1.25rem;background:#fff;border:1px solid var(--gray-100);border-radius:10px;padding:1rem 1.25rem;}
+.donut-svg{flex-shrink:0;}
+.donut-legend{flex:1;}
+.donut-legend-item{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.4rem;font-size:0.75rem;color:var(--gray-700);}
+.donut-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.donut-legend-item span{font-weight:700;color:var(--gray-900);margin-left:auto;}
+/* AMORTIZATION */
+.amort-section{max-width:1000px;margin:0 auto;}
+.amort-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:2rem;}
+.amort-card{background:#fff;border:1px solid var(--gray-100);border-radius:var(--radius);padding:1.25rem;text-align:center;}
+.amort-card .a-label{font-size:0.68rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.4rem;}
+.amort-card .a-val{font-family:'Poppins',sans-serif;font-size:1.3rem;font-weight:900;color:var(--blue-dark);}
+.amort-card.red .a-val{color:#DC2626;}
+.amort-card.green .a-val{color:#16A34A;}
+.amort-table-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--gray-100);}
+.amort-table{width:100%;border-collapse:collapse;font-size:0.8rem;}
+.amort-table th{background:var(--blue-dark);color:#fff;padding:0.75rem 1rem;text-align:right;font-size:0.72rem;font-weight:700;letter-spacing:0.5px;white-space:nowrap;}
+.amort-table th:first-child{text-align:left;}
+.amort-table td{padding:0.65rem 1rem;text-align:right;border-bottom:1px solid var(--gray-100);color:var(--gray-700);}
+.amort-table td:first-child{text-align:left;font-weight:600;color:var(--blue-dark);}
+.amort-table tr:nth-child(even) td{background:#F8FAFC;}
+.amort-table tr:last-child td{background:var(--blue-pale);font-weight:700;color:var(--blue-dark);}
+.amort-table .int-td{color:#DC2626;}
+.amort-table .prin-td{color:#16A34A;}
+.amort-bar{height:6px;background:var(--gray-200);border-radius:3px;overflow:hidden;margin-top:4px;}
+.amort-bar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--blue-mid),var(--blue-bright));transition:width 0.3s;}
+.show-more-btn{display:block;width:100%;background:var(--gray-100);border:1.5px solid var(--gray-300);border-radius:8px;padding:0.75rem;font-size:0.82rem;font-weight:700;color:var(--gray-700);cursor:pointer;margin-top:0.75rem;transition:all 0.15s;font-family:'Inter',sans-serif;}
+.show-more-btn:hover{background:var(--blue-light);border-color:var(--blue-mid);color:var(--blue-mid);}
+
+/* WHY, FEATURES etc */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem}
+.why-card{background:#fff;border:1px solid var(--gray-100);border-radius:var(--radius);padding:1.5rem;transition:box-shadow 0.2s,transform 0.2s;position:relative;overflow:hidden;}
+.why-card::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--blue-mid);transform:scaleY(0);transition:transform 0.25s;transform-origin:bottom;}
+.why-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.why-card:hover::after{transform:scaleY(1)}
+.why-icon{font-size:1.75rem;margin-bottom:0.875rem}
+.why-card h3{font-size:0.92rem;font-weight:700;color:var(--blue-dark);margin-bottom:0.4rem}
+.why-card p{font-size:0.8rem;color:var(--gray-500);line-height:1.6}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.feat-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius);padding:1.25rem;transition:border-color 0.2s,background 0.2s;}
+.feat-card:hover{border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.08)}
+.feat-card .emoji{font-size:1.5rem;margin-bottom:0.6rem}
+.feat-card h4{font-size:0.875rem;font-weight:700;color:#fff;margin-bottom:0.25rem}
+.feat-card p{font-size:0.75rem;color:rgba(255,255,255,0.5);line-height:1.5}
+.feat-card .val{margin-top:0.4rem;font-size:0.8rem;font-weight:700;color:var(--accent)}
+.steps-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem}
+.step-item{text-align:center;position:relative}
+.step-item:not(:last-child)::after{content:'→';position:absolute;right:-0.75rem;top:1.5rem;color:var(--blue-bright);font-size:1.25rem;opacity:0.4;}
+.step-circle{width:52px;height:52px;background:var(--blue-mid);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-size:1.2rem;font-weight:900;color:#fff;margin:0 auto 0.875rem;}
+.step-item h3{font-size:0.88rem;font-weight:700;color:var(--blue-dark);margin-bottom:0.4rem}
+.step-item p{font-size:0.78rem;color:var(--gray-500);line-height:1.6}
+/* FORMULA BOX */
+.formula-box{max-width:700px;margin:0 auto;background:#fff;border:2px solid var(--blue-pale);border-radius:16px;padding:2rem;text-align:center;position:relative;overflow:hidden;}
+.formula-box::before{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;background:var(--blue-pale);border-radius:50%;opacity:0.5;}
+.formula-box h3{font-family:'Poppins',sans-serif;font-size:0.9rem;font-weight:800;color:var(--blue-dark);margin-bottom:1rem;position:relative;}
+.formula-display{background:var(--blue-dark);color:#fff;border-radius:12px;padding:1.25rem 1.5rem;font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:0.5px;margin-bottom:1rem;position:relative;}
+.formula-display em{color:var(--accent);font-style:normal;}
+.formula-legend{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;text-align:left;}
+.fl-item{display:flex;align-items:flex-start;gap:0.5rem;font-size:0.78rem;color:var(--gray-600);}
+.fl-key{font-family:'Poppins',sans-serif;font-weight:900;color:var(--blue-mid);min-width:28px;}
+/* BENEFITS */
+.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+.benefit-card{background:#fff;border-radius:var(--radius);padding:1.5rem;border-left:4px solid var(--blue-mid);box-shadow:var(--shadow-sm);transition:box-shadow 0.2s;}
+.benefit-card:hover{box-shadow:var(--shadow)}
+.benefit-card h3{font-size:0.92rem;font-weight:700;color:var(--blue-dark);margin-bottom:0.4rem;display:flex;align-items:center;gap:0.5rem;}
+.benefit-card p{font-size:0.8rem;color:var(--gray-500);line-height:1.6}
+/* FAQ */
+.faq-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:0.75rem}
+.faq-item{background:#fff;border:1px solid var(--gray-100);border-radius:var(--radius);overflow:hidden;}
+.faq-q{width:100%;background:none;border:none;padding:1.1rem 1.25rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-family:'Inter',sans-serif;font-size:0.875rem;font-weight:600;color:var(--blue-dark);text-align:left;gap:1rem;}
+.faq-q:hover{background:var(--blue-light)}
+.faq-q .arrow{color:var(--blue-mid);font-size:1.1rem;transition:transform 0.25s;flex-shrink:0;}
+.faq-item.open .faq-q .arrow{transform:rotate(180deg)}
+.faq-a{display:none;padding:0 1.25rem 1.1rem;font-size:0.835rem;color:var(--gray-500);line-height:1.75;}
+.faq-item.open .faq-a{display:block}
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+.testi-card{background:#fff;border:1px solid var(--gray-100);border-radius:var(--radius);padding:1.5rem;}
+.stars{color:var(--accent);font-size:0.8rem;margin-bottom:0.75rem}
+.testi-text{font-size:0.875rem;color:var(--gray-700);line-height:1.75;margin-bottom:1.25rem}
+.testi-author{display:flex;align-items:center;gap:0.75rem}
+.tav{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:0.875rem;}
+.tname{font-size:0.8rem;font-weight:700;color:var(--blue-dark)}
+.trole{font-size:0.7rem;color:var(--gray-500)}
+/* CTA */
+.cta-banner{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));padding:56px 5%;text-align:center;}
+.cta-banner h2{font-family:'Poppins',sans-serif;font-size:clamp(1.5rem,2.5vw,2rem);font-weight:900;color:#fff;margin-bottom:0.75rem}
+.cta-banner p{color:rgba(255,255,255,0.7);font-size:0.95rem;margin-bottom:2rem}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--blue-dark);padding:0.8rem 1.75rem;border-radius:8px;font-weight:700;font-size:0.875rem;text-decoration:none;transition:transform 0.15s,box-shadow 0.15s;display:inline-flex;align-items:center;gap:0.4rem;}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,0.2)}
+.btn-outline-white{background:transparent;color:#fff;padding:0.8rem 1.75rem;border-radius:8px;font-weight:600;font-size:0.875rem;text-decoration:none;border:1.5px solid rgba(255,255,255,0.4);transition:border-color 0.15s;display:inline-flex;align-items:center;gap:0.4rem;}
+.btn-outline-white:hover{border-color:#fff}
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start}
+.contact-left h2{font-family:'Poppins',sans-serif;font-size:1.75rem;font-weight:900;color:var(--blue-dark);margin-bottom:0.875rem}
+.contact-left>p{color:var(--gray-500);line-height:1.75;margin-bottom:2rem}
+.cdetail{display:flex;gap:0.875rem;align-items:flex-start;margin-bottom:1.25rem}
+.cicon{width:40px;height:40px;flex-shrink:0;background:var(--blue-light);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.cdetail h4{font-size:0.7rem;font-weight:700;color:var(--gray-500);letter-spacing:0.5px;text-transform:uppercase;margin-bottom:0.2rem}
+.cdetail p,.cdetail a{font-size:0.9rem;font-weight:600;color:var(--blue-dark);text-decoration:none;margin:0;line-height:1.4}
+.cdetail a:hover{color:var(--blue-mid)}
+.contact-form{background:#fff;border:1px solid var(--gray-100);border-radius:16px;padding:2rem;box-shadow:var(--shadow-lg);}
+.contact-form h3{font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:800;color:var(--blue-dark);margin-bottom:1.5rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.ff{margin-bottom:1rem}
+.ff label{display:block;font-size:0.75rem;font-weight:700;color:var(--gray-700);margin-bottom:0.35rem;letter-spacing:0.2px}
+.ff input,.ff select,.ff textarea{width:100%;padding:0.7rem 0.875rem;border:1.5px solid var(--gray-300);border-radius:8px;font-family:'Inter',sans-serif;font-size:0.85rem;color:var(--gray-900);background:#fff;outline:none;transition:border-color 0.15s,box-shadow 0.15s;}
+.ff input:focus,.ff select:focus,.ff textarea:focus{border-color:var(--blue-mid);box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
+.ff textarea{resize:vertical;min-height:90px}
+.form-submit{width:100%;background:var(--blue-mid);color:#fff;border:none;border-radius:8px;padding:0.875rem;font-weight:700;font-size:0.9rem;cursor:pointer;font-family:'Inter',sans-serif;display:flex;align-items:center;justify-content:center;gap:0.4rem;transition:background 0.15s;}
+.form-submit:hover{background:var(--blue-dark)}
+.form-submit:disabled{opacity:0.6;cursor:not-allowed}
+.form-note{text-align:center;font-size:0.72rem;color:var(--gray-500);margin-top:0.75rem}
+.wa-float{position:fixed;bottom:1.75rem;right:1.75rem;z-index:400;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.45);transition:transform 0.2s;}
+.wa-float:hover{transform:scale(1.08)}
+footer{background:var(--blue-dark);color:rgba(255,255,255,0.5);padding:3.5rem 5% 2rem}
+.footer-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:2rem;margin-bottom:2rem}
+.footer-brand .nav-logo{display:block;margin-bottom:0.75rem;color:#fff;font-size:1.2rem}
+.footer-brand p{font-size:0.78rem;line-height:1.7;max-width:220px}
+.footer-col h4{font-size:0.68rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.875rem}
+.footer-col a{display:block;color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.78rem;margin-bottom:0.4rem;transition:color 0.15s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{max-width:1280px;margin:0 auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;align-items:center;font-size:0.72rem;flex-wrap:wrap;gap:0.5rem}
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(80px);background:var(--blue-dark);color:#fff;padding:0.875rem 1.5rem;border-radius:10px;border-left:4px solid var(--accent);box-shadow:var(--shadow-lg);font-size:0.875rem;font-weight:500;opacity:0;transition:transform 0.35s,opacity 0.35s;z-index:999;white-space:nowrap;}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+.toast.error{border-left-color:#EF4444}
+.spinner{width:16px;height:16px;border:2px solid rgba(255,255,255,0.3);border-top-color:#fff;border-radius:50%;animation:spin 0.6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:900px){
+  .nav-menu{display:none}.hamburger{display:flex}
+  .calc-body{grid-template-columns:1fr}
+  .calc-inputs{border-right:none;border-bottom:1px solid var(--gray-100);}
+  .contact-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}.step-item:not(:last-child)::after{display:none}
+  .formula-legend{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .topbar{display:none}.footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}.hero-stats{gap:1.25rem}
+  .result-cards{grid-template-columns:1fr}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebApplication",
+      "name":"EMI Calculator — DSA Loan Agent",
+      "url":"https://dsaloanagent.in/emi-calculator.html",
+      "description":"Free online EMI calculator for Home Loan, Personal Loan, Car Loan, and Business Loan. Calculate monthly EMI, total interest, total payable, and view full amortization schedule instantly.",
+      "applicationCategory":"FinanceApplication",
+      "operatingSystem":"Any",
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},
+      "provider":{"@type":"LocalBusiness","name":"DSA Loan Agent","telephone":"+919705317513","areaServed":["Andhra Pradesh","Telangana"]}
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"EMI ante enti?","acceptedAnswer":{"@type":"Answer","text":"EMI (Equated Monthly Instalment) ante loan repay cheyyadaniki every month pay cheyye fixed amount. Idi principal + interest combination. EMI amount loan amount, interest rate, and tenure batti calculate avutundi."}},
+        {"@type":"Question","name":"EMI formula enti?","acceptedAnswer":{"@type":"Answer","text":"EMI = P × r × (1+r)^n / [(1+r)^n - 1]. Ikkada P = Principal loan amount, r = monthly interest rate (annual rate ÷ 12 ÷ 100), n = loan tenure in months."}},
+        {"@type":"Question","name":"EMI tagginchukovadam ela?","acceptedAnswer":{"@type":"Answer","text":"EMI tagginchukovadam ki: (1) Loan tenure penchandi — same rate lo zyada months spread cheyyandi; (2) High down payment pay cheyyandi — principal takkuva avutundi; (3) Low interest rate bank select cheyyandi; (4) Part-prepayment cheyyandi — outstanding principal takkuva avutundi."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- TOP BAR -->
+<div class="topbar">
+  <span>🏦 RBI Registered DSA Agent | Serving Andhra Pradesh & Telangana</span>
+  <div class="topbar-right">
+    <a href="tel:+919705317513">📞 +91 97053 17513</a>
+    <a href="https://wa.me/919705317513" target="_blank">💬 WhatsApp Us</a>
+  </div>
+</div>
+<!-- NAVBAR -->
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">DSA <span>Loan</span> Agent</a>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item">
+        <button class="nav-link">Loans <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="mega"><div class="mega-inner mega-loans">
+          <div class="mega-col"><h4>Personal & Retail</h4><a href="personal-loan.html">Personal Loan</a><a href="instant-loan.html">Instant Loan</a><a href="salary-loan.html">Salary-Based Loan</a><a href="pension-loan.html">Pension Loan</a></div>
+          <div class="mega-col"><h4>Home & Property</h4><a href="index.html#contact">Home Loan</a><a href="index.html#contact">Home Loan Balance Transfer</a><a href="loan-against-property.html">Loan Against Property</a><a href="index.html#contact">Plot / Construction Loan</a></div>
+          <div class="mega-col"><h4>Vehicle Loans</h4><a href="index.html#contact">Car Loan</a><a href="index.html#contact">Two-Wheeler Loan</a><a href="commercial-vehicle-loan.html">Commercial Vehicle Loan</a><h4 style="margin-top:1rem">Agriculture</h4><a href="kisan-credit-card.html">Kisan Credit Card (KCC)</a></div>
+          <div class="mega-col"><h4>Business & MSME</h4><a href="index.html#contact">Business Loan</a><a href="index.html#contact">MSME Loan</a><a href="working-capital-loan.html">Working Capital Loan</a><a href="index.html#contact">Overdraft / Cash Credit</a></div>
+        </div></div>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link">Insurance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="mega"><div class="mega-inner mega-insurance">
+          <div class="mega-col"><h4>Life Insurance</h4><a href="index.html#contact">Term Insurance</a><a href="index.html#contact">Whole Life Policy</a><a href="ulip.html">ULIP</a></div>
+          <div class="mega-col"><h4>Health Insurance</h4><a href="index.html#contact">Individual Health Insurance</a><a href="index.html#contact">Family Floater Plan</a><a href="group-health-insurance.html">Group Health Insurance</a></div>
+          <div class="mega-col"><h4>General Insurance</h4><a href="motor-insurance.html">Motor Insurance (Car / Bike)</a><a href="index.html#contact">Travel Insurance</a><a href="index.html#contact">Home Insurance</a></div>
+          <div class="mega-col"><h4>Business Insurance</h4><a href="index.html#contact">Fire & Burglary Insurance</a><a href="index.html#contact">Marine Insurance</a><a href="group-health-insurance.html">Group Health Insurance</a><a href="index.html#contact">Workmen Compensation</a></div>
+        </div></div>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link">Credit Cards <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="dropdown"><a href="index.html#contact">Credit Cards for Salaried</a><a href="index.html#contact">Credit Cards for Self-Employed</a><a href="index.html#contact">Business Credit Cards</a></div>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link active">Tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="dropdown">
+          <a href="emi-calculator.html">EMI Calculator</a>
+          <a href="index.html#contact">Check Loan Eligibility</a>
+          <a href="index.html#services">Compare Loans</a>
+          <a href="index.html#contact">Compare Insurance Plans</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="dropdown"><a href="index.html#about">Why Choose Us</a><a href="index.html#partners">Our Banking Partners</a><a href="#faq">FAQs</a><a href="#contact">Contact Us</a></div>
+      </li>
+      <li><a href="#contact" class="nav-link nav-cta">Apply Now →</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-close"><span class="nav-logo">DSA <span>Loan</span> Agent</span><button onclick="toggleMobile()">✕</button></div>
+  <div class="mobile-section"><h3>Tools</h3><a href="emi-calculator.html" onclick="toggleMobile()">🧮 EMI Calculator</a><a href="index.html#contact" onclick="toggleMobile()">Check Loan Eligibility</a></div>
+  <div class="mobile-section"><h3>Loans</h3><a href="personal-loan.html" onclick="toggleMobile()">Personal Loan</a><a href="kisan-credit-card.html" onclick="toggleMobile()">Kisan Credit Card</a><a href="working-capital-loan.html" onclick="toggleMobile()">Working Capital Loan</a></div>
+  <div class="mobile-section"><h3>Insurance</h3><a href="ulip.html" onclick="toggleMobile()">ULIP</a><a href="motor-insurance.html" onclick="toggleMobile()">Motor Insurance</a><a href="group-health-insurance.html" onclick="toggleMobile()">Group Health Insurance</a></div>
+  <div class="mobile-section"><h3>Quick Links</h3><a href="#contact" onclick="toggleMobile()">Apply Now</a></div>
+</div>
+<!-- BREADCRUMB -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div style="max-width:1280px;margin:0 auto">
+    <a href="index.html">Home</a><span>›</span>
+    <a href="index.html#services">Tools</a><span>›</span>
+    EMI Calculator
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-tag">Free Tool · Instant Results · All Loan Types</div>
+    <h1>EMI Calculator — <em>Instant,</em><br/>Accurate & 100% Free</h1>
+    <p class="hero-sub">Loan teesukune mundu monthly EMI entha avutundi anedi clearly telusukōndi. Home Loan, Personal Loan, Car Loan, Business Loan — anni types ki works. Amortization schedule tō principal vs interest breakdown complete gā chūdandi.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">🏠 Home Loan</span>
+      <span class="hero-pill">👤 Personal Loan</span>
+      <span class="hero-pill">🚗 Car Loan</span>
+      <span class="hero-pill">🏢 Business Loan</span>
+      <span class="hero-pill">🌾 Agriculture Loan</span>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-num">Instant</div><div class="hstat-label">EMI Calculation</div></div>
+      <div class="hstat"><div class="hstat-num">100%</div><div class="hstat-label">Accurate Formula</div></div>
+      <div class="hstat"><div class="hstat-num">Free</div><div class="hstat-label">No Hidden Charges</div></div>
+      <div class="hstat"><div class="hstat-num">360°</div><div class="hstat-label">Amortization View</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INTERACTIVE EMI CALCULATOR ═══ -->
+<section class="section section-gray-bg" id="calculator">
+  <div class="section-inner">
+    <div class="section-head center">
+      <div class="section-tag">EMI Calculator</div>
+      <h2 class="section-title">Calculate Your Loan EMI Instantly</h2>
+      <p class="section-sub">Sliders move cheyyandi lēdā values type cheyyandi — results instantly update avutāyi. Zero wait time, zero registration needed.</p>
+    </div>
+
+    <div class="calc-wrapper" role="main" aria-label="EMI Calculator">
+      <div class="calc-header">
+        <span style="font-size:1.3rem;">🧮</span>
+        <h2>EMI Calculator — Loan Amount, Rate & Tenure</h2>
+        <span>LIVE</span>
+      </div>
+      <div class="calc-body">
+        <!-- INPUTS -->
+        <div class="calc-inputs">
+          <h3>Enter Loan Details</h3>
+          <!-- Loan Type Tabs -->
+          <div class="loan-type-tabs" role="group" aria-label="Loan type selection">
+            <button class="lt-tab active" onclick="setLoanType(this,'Home Loan',3000000,8.5,240)">🏠 Home</button>
+            <button class="lt-tab" onclick="setLoanType(this,'Personal Loan',500000,12,60)">👤 Personal</button>
+            <button class="lt-tab" onclick="setLoanType(this,'Car Loan',800000,9,60)">🚗 Car</button>
+            <button class="lt-tab" onclick="setLoanType(this,'Business Loan',2000000,14,84)">🏢 Business</button>
+            <button class="lt-tab" onclick="setLoanType(this,'Education Loan',1000000,11,120)">🎓 Education</button>
+          </div>
+
+          <!-- Loan Amount -->
+          <div class="input-group">
+            <label for="loanAmt">Loan Amount <span id="amtDisplay">₹30,00,000</span></label>
+            <div class="inp-row">
+              <span class="inp-prefix">₹</span>
+              <input type="number" id="loanAmtNum" value="3000000" min="10000" max="100000000" step="10000" oninput="syncFromNum('loanAmt','loanAmtNum',10000,100000000)" aria-label="Loan amount in rupees"/>
+            </div>
+            <input type="range" id="loanAmt" min="10000" max="100000000" step="10000" value="3000000" oninput="syncFromRange('loanAmt','loanAmtNum','amtDisplay',formatAmt)" aria-label="Loan amount slider"/>
+            <div class="range-labels"><span>₹10K</span><span>₹10Cr</span></div>
+          </div>
+
+          <!-- Interest Rate -->
+          <div class="input-group">
+            <label for="intRate">Annual Interest Rate <span id="rateDisplay">8.5% p.a.</span></label>
+            <div class="inp-row">
+              <input type="number" id="intRateNum" value="8.5" min="1" max="36" step="0.1" oninput="syncFromNum('intRate','intRateNum',1,36)" aria-label="Annual interest rate"/>
+              <span class="inp-suffix">% p.a.</span>
+            </div>
+            <input type="range" id="intRate" min="1" max="36" step="0.1" value="8.5" oninput="syncFromRange('intRate','intRateNum','rateDisplay',r=>r+'% p.a.')" aria-label="Interest rate slider"/>
+            <div class="range-labels"><span>1%</span><span>36%</span></div>
+          </div>
+
+          <!-- Tenure -->
+          <div class="input-group">
+            <label for="tenure">Loan Tenure <span id="tenureDisplay">20 Years (240 Months)</span></label>
+            <div class="inp-row">
+              <input type="number" id="tenureNum" value="240" min="1" max="360" step="1" oninput="syncFromNum('tenure','tenureNum',1,360)" aria-label="Loan tenure in months"/>
+              <span class="inp-suffix">Months</span>
+            </div>
+            <input type="range" id="tenure" min="1" max="360" step="1" value="240" oninput="syncFromRange('tenure','tenureNum','tenureDisplay',formatTenure)" aria-label="Tenure slider"/>
+            <div class="range-labels"><span>1 Mo</span><span>30 Yrs</span></div>
+          </div>
+        </div>
+
+        <!-- RESULTS -->
+        <div class="calc-results">
+          <h3>Your EMI Results</h3>
+          <div class="result-emi" aria-live="polite">
+            <div class="label">Monthly EMI</div>
+            <div class="value" id="emiResult">₹25,930</div>
+            <div class="sub">Pay this every month for <span id="emiMonths">240 months</span></div>
+          </div>
+          <div class="result-cards">
+            <div class="rc green-card">
+              <div class="rc-label">Principal Amount</div>
+              <div class="rc-val" id="principalResult">₹30,00,000</div>
+            </div>
+            <div class="rc accent-card">
+              <div class="rc-label">Total Interest</div>
+              <div class="rc-val" id="interestResult">₹32,23,296</div>
+            </div>
+            <div class="rc">
+              <div class="rc-label">Total Payment</div>
+              <div class="rc-val" id="totalResult">₹62,23,296</div>
+            </div>
+            <div class="rc">
+              <div class="rc-label">Interest / Principal</div>
+              <div class="rc-val" id="ratioResult">107%</div>
+            </div>
+          </div>
+          <!-- DONUT -->
+          <div class="donut-wrap" aria-label="Principal vs Interest breakdown chart">
+            <svg class="donut-svg" width="90" height="90" viewBox="0 0 90 90" aria-hidden="true">
+              <circle cx="45" cy="45" r="35" fill="none" stroke="#E2E8F0" stroke-width="14"/>
+              <circle id="donutPrincipal" cx="45" cy="45" r="35" fill="none" stroke="#2563EB" stroke-width="14" stroke-dasharray="220 0" stroke-dashoffset="55" stroke-linecap="round" style="transition:stroke-dasharray 0.4s"/>
+              <circle id="donutInterest" cx="45" cy="45" r="35" fill="none" stroke="#F59E0B" stroke-width="14" stroke-dasharray="0 220" stroke-dashoffset="55" stroke-linecap="round" style="transition:stroke-dasharray 0.4s"/>
+            </svg>
+            <div class="donut-legend">
+              <div class="donut-legend-item"><div class="donut-dot" style="background:#2563EB"></div>Principal <span id="legPrincipal">48%</span></div>
+              <div class="donut-legend-item"><div class="donut-dot" style="background:#F59E0B"></div>Interest <span id="legInterest">52%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AMORTIZATION SCHEDULE ═══ -->
+<section class="section" id="amortization">
+  <div class="section-inner">
+    <div class="section-head center">
+      <div class="section-tag">Amortization Schedule</div>
+      <h2 class="section-title">Year-by-Year Amortization Breakdown</h2>
+      <p class="section-sub">Oka year lo entha principal repay avutundo, entha interest pay chestunnāmo clearly chūdandi. Calculator above lo values change cheyyagāne ikkade kūḍā auto-update avutundi.</p>
+    </div>
+    <div class="amort-section">
+      <div class="amort-summary">
+        <div class="amort-card"><div class="a-label">Loan Amount</div><div class="a-val" id="as_principal">₹30,00,000</div></div>
+        <div class="amort-card"><div class="a-label">Monthly EMI</div><div class="a-val" id="as_emi">₹25,930</div></div>
+        <div class="amort-card red"><div class="a-label">Total Interest</div><div class="a-val" id="as_interest">₹32,23,296</div></div>
+        <div class="amort-card green"><div class="a-label">Total Payable</div><div class="a-val" id="as_total">₹62,23,296</div></div>
+      </div>
+      <div class="amort-table-wrap">
+        <table class="amort-table" aria-label="Loan amortization schedule by year">
+          <thead>
+            <tr>
+              <th style="text-align:left">Year</th>
+              <th>Opening Balance</th>
+              <th>Principal Paid</th>
+              <th>Interest Paid</th>
+              <th>Total Paid</th>
+              <th>Closing Balance</th>
+            </tr>
+          </thead>
+          <tbody id="amortBody"></tbody>
+        </table>
+      </div>
+      <button class="show-more-btn" id="showMoreBtn" onclick="toggleAmort()">📋 Show Full Monthly Schedule ▾</button>
+      <div id="monthlyTableWrap" style="display:none;margin-top:1rem;">
+        <div class="amort-table-wrap">
+          <table class="amort-table" aria-label="Monthly amortization schedule">
+            <thead>
+              <tr>
+                <th style="text-align:left">Month</th>
+                <th>Opening Balance</th>
+                <th>EMI</th>
+                <th>Principal</th>
+                <th>Interest</th>
+                <th>Closing Balance</th>
+              </tr>
+            </thead>
+            <tbody id="monthlyBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY USE ═══ -->
+<section class="section section-blue-bg" id="why">
+  <div class="section-inner">
+    <div class="section-head center">
+      <div class="section-tag">Why Use Our EMI Calculator</div>
+      <h2 class="section-title">The smartest way to plan your loan repayment</h2>
+      <p class="section-sub">Loan apply cheyye mundu EMI plan cheyyadam — wisest financial decision. Mee monthly budget ki fit avutundā anedi clearly telsutundi.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon">⚡</div><h3>Instant Calculation</h3><p>Sliders move cheyyagāne — zero delay, real-time results. No page reload, no login, no wait. Mobile lo kūḍā perfectly works.</p></div>
+      <div class="why-card"><div class="why-icon">🎯</div><h3>100% Accurate Formula</h3><p>RBI-standard EMI formula use chestundi — P × r × (1+r)^n / [(1+r)^n–1]. Banks same formula use chestāyi — results exact match avutāyi.</p></div>
+      <div class="why-card"><div class="why-icon">📊</div><h3>Complete Amortization</h3><p>Year-wise and month-wise schedule — principal vs interest breakdown clearly chūdandi. Oka year lo entha repaid anedi instantly telusukōndi.</p></div>
+      <div class="why-card"><div class="why-icon">🆓</div><h3>Free & No Registration</h3><p>Login avasaram ledu, personal details share cheyyadam ledu, hidden charges ledu. Just open and calculate — fully free, always.</p></div>
+      <div class="why-card"><div class="why-icon">📱</div><h3>Mobile Friendly</h3><p>Phone lo, tablet lo, desktop lo — anni devices lo perfectly responsive. On-the-go EMI check cheyyadam easy.</p></div>
+      <div class="why-card"><div class="why-icon">🔄</div><h3>Multiple Scenarios</h3><p>Rate change cheyyandi, tenure adjust cheyyandi — instantly different scenarios compare cheyyandi. Best combination mee ki suit ayye lā choose cheyyandi.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURES ═══ -->
+<section class="section section-dark-bg" id="features">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-tag">EMI Calculator Features</div>
+      <h2 class="section-title">What makes this EMI Calculator special?</h2>
+      <p class="section-sub">Basic EMI calculators kante zyada features — full loan planning tool gā design chesāmu.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card"><div class="emoji">🎛️</div><h4>Slider + Input Both</h4><p>Type lēdā drag — both methods supported for each field</p><div class="val">Dual Input Mode</div></div>
+      <div class="feat-card"><div class="emoji">🏷️</div><h4>Loan Type Presets</h4><p>Home, Personal, Car, Business, Education — one click defaults</p><div class="val">5 Loan Types</div></div>
+      <div class="feat-card"><div class="emoji">🍩</div><h4>Visual Donut Chart</h4><p>Principal vs Interest visual breakdown — easy to understand</p><div class="val">Real-time Update</div></div>
+      <div class="feat-card"><div class="emoji">📅</div><h4>Year-wise Schedule</h4><p>Annual amortization table — opening, paid, closing balance</p><div class="val">Auto Generated</div></div>
+      <div class="feat-card"><div class="emoji">📋</div><h4>Monthly Schedule</h4><p>Full month-by-month amortization — all 360 rows if needed</p><div class="val">Show/Hide Toggle</div></div>
+      <div class="feat-card"><div class="emoji">📊</div><h4>Progress Bars</h4><p>Visual principal progress in amortization table per year</p><div class="val">Colour Coded</div></div>
+      <div class="feat-card"><div class="emoji">📱</div><h4>Mobile Optimised</h4><p>Touch-friendly sliders, readable text, responsive layout</p><div class="val">All Screen Sizes</div></div>
+      <div class="feat-card"><div class="emoji">🔁</div><h4>Instant Sync</h4><p>Slider and number input always in sync — no confusion</p><div class="val">Zero Lag</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW TO CALCULATE ═══ -->
+<section class="section section-gray-bg" id="how">
+  <div class="section-inner">
+    <div class="section-head center">
+      <div class="section-tag">How to Calculate EMI</div>
+      <h2 class="section-title">Calculate your EMI in 3 simple steps</h2>
+      <p class="section-sub">30 seconds lo accurate EMI result — ika loan planning easy avutundi.</p>
+    </div>
+    <div class="steps-row">
+      <div class="step-item">
+        <div class="step-circle">1</div>
+        <h3>Enter Loan Amount</h3>
+        <p>Mee kavalsina loan amount type cheyyandi lēdā slider drag cheyyandi. ₹10,000 nundi ₹10 Crore varaku — any amount work avutundi.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">2</div>
+        <h3>Set Interest Rate</h3>
+        <p>Bank quote chesina annual interest rate enter cheyyandi. 1% nundi 36% varaku. Rate confirm lekapothe average rate preset use cheyyandi.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">3</div>
+        <h3>Choose Tenure</h3>
+        <p>Loan repay cheyyadaniki months lo tenure set cheyyandi. 1 month nundi 360 months (30 years) varaku — any duration supported.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">4</div>
+        <h3>Get Instant Results</h3>
+        <p>Monthly EMI, Total Interest, Total Payable — instant gā calculate avutāyi. Amortization schedule kūḍā auto-generate avutundi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EMI FORMULA ═══ -->
+<section class="section" id="formula">
+  <div class="section-inner">
+    <div class="section-head center">
+      <div class="section-tag">EMI Formula</div>
+      <h2 class="section-title">Standard EMI Calculation Formula Explained</h2>
+      <p class="section-sub">Banks and financial institutions same formula use chestāyi — idi RBI-approved standard method. Simple gā explain chestāmu.</p>
+    </div>
+    <div class="formula-box" aria-label="EMI formula explanation">
+      <h3>📐 Standard EMI Formula (RBI Standard)</h3>
+      <div class="formula-display">
+        EMI = <em>P</em> × <em>r</em> × (1 + <em>r</em>)<sup><em>n</em></sup> ÷ [(1 + <em>r</em>)<sup><em>n</em></sup> − 1]
+      </div>
+      <div class="formula-legend">
+        <div class="fl-item"><span class="fl-key">P</span> = Principal loan amount (borrowed amount in ₹)</div>
+        <div class="fl-item"><span class="fl-key">r</span> = Monthly interest rate = Annual Rate ÷ 12 ÷ 100</div>
+        <div class="fl-item"><span class="fl-key">n</span> = Loan tenure in months (years × 12)</div>
+        <div class="fl-item"><span class="fl-key">EMI</span> = Monthly instalment amount (₹)</div>
+      </div>
+    </div>
+    <div style="max-width:700px;margin:2rem auto 0;padding:1.25rem;background:var(--blue-pale);border-radius:var(--radius);font-size:0.83rem;color:var(--blue-dark);line-height:1.75;">
+      <strong>📘 Example:</strong> ₹10,00,000 loan at 10% p.a. for 5 years (60 months).<br/>
+      Monthly rate r = 10 ÷ 12 ÷ 100 = 0.00833<br/>
+      EMI = 10,00,000 × 0.00833 × (1.00833)^60 ÷ [(1.00833)^60 − 1]<br/>
+      <strong>= ₹21,247 per month</strong> — Total Interest = ₹2,74,820 — Total Payment = ₹12,74,820
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BENEFITS ═══ -->
+<section class="section section-blue-bg" id="benefits">
+  <div class="section-inner">
+    <div class="section-head center">
+      <div class="section-tag">Benefits of Using an EMI Calculator</div>
+      <h2 class="section-title">Why smart borrowers always calculate EMI first</h2>
+      <p class="section-sub">Loan apply cheyye mundu EMI calculate cheyyadam — mee financial health protect cheyyadāniki sabse important step.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card"><h3>💰 Budget Planning</h3><p>Monthly EMI amount mundu telusukōndi — mee salary lo safely afford cheyyagalanā anedi confirm cheyyandi. EMI mee net income lo 40–50% exceed cheyyakūḍadu anedi general guideline.</p></div>
+      <div class="benefit-card"><h3>📊 Compare Multiple Offers</h3><p>Different banks different rates quote chestāyi — EMI calculator tō compare cheyyandi. 0.5% rate difference kūḍā long-term lo lakhs difference create chestundi.</p></div>
+      <div class="benefit-card"><h3>🎯 Choose Right Tenure</h3><p>Short tenure = high EMI, low total interest. Long tenure = low EMI, high total interest. Calculator tō mee ki right balance find cheyyandi.</p></div>
+      <div class="benefit-card"><h3>🔮 Plan Prepayment</h3><p>Partial prepayment cheyyālanukuntunnārā? Calculator tō new EMI lēdā reduced tenure estimate cheyyandi — interest savings clearly chūdandi.</p></div>
+      <div class="benefit-card"><h3>✅ Loan Eligibility Estimate</h3><p>Mee monthly income lo affordable EMI telusukōndi — adi batti maximum eligible loan amount roughly estimate cheyyachu before bank visit.</p></div>
+      <div class="benefit-card"><h3>📅 Avoid EMI Defaults</h3><p>Realistic EMI plan tō defaults avoid cheyyachu. Credit score protect avutundi — future loans ki kūḍā benefits untāyi. EMI never miss cheyyadam = best financial habit.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="section" id="faq">
+  <div class="section-inner">
+    <div class="section-head center">
+      <div class="section-tag">FAQ</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-sub">EMI calculator మరియు loan repayment గురించి common doubts — clear answers.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">EMI ante enti? Ela calculate avutundi?<span class="arrow">▾</span></button>
+        <div class="faq-a">EMI (Equated Monthly Instalment) ante loan repay cheyyadaniki every month bank ki pay cheyye fixed amount. Idi principal repayment + interest two parts tō ఉంటుంది. Formula: EMI = P × r × (1+r)^n / [(1+r)^n – 1]. P = loan amount, r = monthly rate, n = tenure months. Calculator automatically compute chestundi — manual calculation avasaram ledu.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">EMI lo starting months lo zyada interest enti pay avutundi?<span class="arrow">▾</span></button>
+        <div class="faq-a">Idi "reducing balance method" valla avutundi — banks same method use chestāyi. First EMI lo outstanding loan full amount pai interest calculate avutundi — principal repayment takkuva, interest zyada. Oka month repay chesinappudu next month outstanding balance takkuva avutundi — so interest takkuva, principal repayment zyada. Amortization schedule lo idi clearly chūdachu — years pass avutunna kōdī principal component penchutundi.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">EMI tagginchukovadam ela possible?<span class="arrow">▾</span></button>
+        <div class="faq-a">EMI tagginchukovalante: (1) Tenure increase cheyyandi — same principal, zyada months spread = takkuva monthly EMI (kānī total interest zyada avutundi); (2) Higher down payment — principal amount takkuva; (3) Lower interest rate bank choose cheyyandi — DSA Loan Agent 20+ banks compare chestādu; (4) Loan balance transfer to lower rate bank. Calculator lo different combinations try cheyyandi — mee budget ki right combination find cheyyandi.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Floating rate loan ki EMI change avutundā?<span class="arrow">▾</span></button>
+        <div class="faq-a">Avunu — floating rate loans (most home loans) ki interest rate change avutundi RBI policy batti. Rate decrease ayyinappudu, bank generally tenure reduce chestundi (EMI same unchindi). Rate increase ayyinappudu, EMI increase avvavachu lēdā tenure extend chestundi. Calculator lo rate change cheyyi — EMI impact clearly chūdandī. Floating rate long-term lo fixed rate kante often cheaper avutundi, kānī uncertainty ఉంటుంది.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Prepayment cheyyatam beneficial aa? EMI ki ela affect avutundi?<span class="arrow">▾</span></button>
+        <div class="faq-a">Prepayment highly beneficial — outstanding principal takkuva avutundi, so future interest significantly takkuva avutundi. Most banks home loans lo prepayment charges levu (floating rate). Personal lēdā car loans ki konni banks prepayment charge veyachu. Prepayment tarvata bank 2 options istundi: (1) Same EMI, tenure reduce cheyyandi; (2) Same tenure, EMI reduce cheyyandi. Option 1 (tenure reduce) zyada interest savings istundi. DSA Loan Agent agent prepayment decision lo help chestādu.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Home loan EMI ki tax benefit vachindā?<span class="arrow">▾</span></button>
+        <div class="faq-a">Avunu! Home loan EMI lo 2 components: (1) Principal repayment — Section 80C kinda up to ₹1.5 Lakhs deduction per year; (2) Interest payment — Section 24(b) kinda up to ₹2 Lakhs deduction per year (self-occupied property). First-time buyers ki additional ₹1.5 Lakhs deduction Section 80EEA. Total up to ₹5 Lakhs/year tax benefit possible — EMI really effective investment avutundi own house ki.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">EMI miss ayyinappudu emi avutundi?<span class="arrow">▾</span></button>
+        <div class="faq-a">EMI miss ayyinappudu: (1) Penal interest charge avutundi — typically 1–2% per month on overdue amount; (2) Credit score (CIBIL) negative impact — future loans ki problem avutundi; (3) 3+ consecutive EMIs miss ayyinappudu loan NPA declare avutundi; (4) Legal action possible. Temporary financial difficulty unte, bank ki mundu inform cheyyandi — moratorium lēdā restructuring request cheyyachu. DSA Loan Agent tō discuss cheyyandi — best solution suggest chestāmu.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">DSA Loan Agent EMI calculator use cheyyataniki registration avasaram undā?<span class="arrow">▾</span></button>
+        <div class="faq-a">Absolutely not! EMI calculator 100% free — no registration, no login, no personal data required. Freely use cheyyandi, unlimited times. Calculator results satisfied gā unte, DSA Loan Agent tō connect cheyyandi — mee actual loan ki best bank and rate find cheyyadāniki. Meeru apply cheyyadaniki memu full free guidance ista mu.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="section section-blue-bg">
+  <div class="section-inner">
+    <div class="section-head center">
+      <div class="section-tag">Customer Reviews</div>
+      <h2 class="section-title">Real borrowers who planned smarter with our EMI Calculator</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">Home loan apply cheyye mundu DSA Loan Agent EMI calculator use chesānu. ₹40L loan ki 20 years lo monthly EMI entha avutundō exactly telusukunnānu. Amortization table lo interest breakdown chūsi shorter tenure choose chesānu — ₹8 Lakhs interest savings ayyindi. Excellent tool!</p>
+        <div class="testi-author">
+          <div class="tav">AR</div>
+          <div><div class="tname">Arun Reddy</div><div class="trole">Home Loan · ₹40L · Hyderabad</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">Naa car loan ki different banks different rates quote chesāru. EMI calculator tō every rate enter chesi total interest compare chesānu — 0.7% rate difference lo ₹18,000 total savings chūsānu. Clear comparison tō smart decision chesānu. Thank you DSA Loan Agent!</p>
+        <div class="testi-author">
+          <div class="tav">PK</div>
+          <div><div class="tname">Priya Kumari</div><div class="trole">Car Loan · ₹8L · Vijayawada</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">Business loan ki 3 year vs 5 year tenure compare cheyyalanukunna. EMI calculator lo both enter chesānu — 3 year lo EMI high but total interest ₹2.3L savings anedi clearly chūsānu. Monthly budget afford cheyyadam confirm chesukuni 3 year option chesānu. Simple but powerful tool!</p>
+        <div class="testi-author">
+          <div class="tav">VN</div>
+          <div><div class="tname">Venkat Naidu</div><div class="trole">Business Loan · ₹15L · Warangal</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<div class="cta-banner">
+  <h2>EMI calculate chesāru — ika loan apply cheyyadāniki ready!</h2>
+  <p>DSA Loan Agent tō connect cheyyandi — 20+ banks compare chesi mee best loan match instant gā find chestāmu. Free service, fast approval.</p>
+  <div class="cta-btns">
+    <a href="#contact" class="btn-white">📋 Apply for Loan — Free</a>
+    <a href="https://wa.me/919705317513" target="_blank" class="btn-outline-white">💬 Chat on WhatsApp</a>
+    <a href="tel:+919705317513" class="btn-outline-white">📞 Call Agent Now</a>
+  </div>
+</div>
+
+<!-- ═══ CONTACT ═══ -->
+<section class="section" id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <div class="section-tag">Apply Now</div>
+        <h2>Ready to apply for your loan?</h2>
+        <p>EMI calculate chesāru — ika correct loan ki apply cheyyandi. Agent mee EMI preference, income, and credit profile batti best matching bank and rate find chestādu. Completely free service.</p>
+        <div class="cdetail"><div class="cicon">📞</div><div><h4>Phone / WhatsApp</h4><a href="tel:+919705317513">+91 97053 17513</a></div></div>
+        <div class="cdetail"><div class="cicon">💬</div><div><h4>WhatsApp</h4><a href="https://wa.me/919705317513" target="_blank">Chat with Agent</a></div></div>
+        <div class="cdetail"><div class="cicon">🕐</div><div><h4>Working Hours</h4><p>Mon – Sat: 9:00 AM – 7:00 PM</p></div></div>
+        <div class="cdetail"><div class="cicon">📍</div><div><h4>Serving Area</h4><p>Andhra Pradesh & Telangana</p></div></div>
+      </div>
+      <div class="contact-form">
+        <h3>📋 Apply for Loan — Get Best EMI Deal</h3>
+        <div class="form-row">
+          <div class="ff"><label>Full Name *</label><input type="text" id="fName" placeholder="Your full name"/></div>
+          <div class="ff"><label>Mobile Number *</label><input type="tel" id="fPhone" placeholder="+91 9876543210"/></div>
+        </div>
+        <div class="form-row">
+          <div class="ff"><label>Loan Type *</label>
+            <select id="fAmount">
+              <option value="">Select loan type</option>
+              <option>Home Loan</option><option>Personal Loan</option><option>Car Loan</option>
+              <option>Business / MSME Loan</option><option>Education Loan</option>
+              <option>Loan Against Property</option><option>Agriculture / KCC Loan</option>
+            </select>
+          </div>
+          <div class="ff"><label>Loan Amount Needed *</label>
+            <select id="fEmp">
+              <option value="">Select amount</option>
+                            <option>₹50L – ₹1 Crore</option><option>Above ₹1 Crore</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="ff"><label>Employment Type</label>
+            <select id="fIncome">
+              <option value="">Select type</option>
+              <option>Salaried</option><option>Self-Employed / Business</option>
+              <option>Professional (Doctor/CA/Lawyer)</option><option>Farmer</option><option>Pensioner</option>
+            </select>
+          </div>
+          <div class="ff"><label>City / District</label><input type="text" id="fCity" placeholder="Your city or district"/></div>
+        </div>
+        <div class="ff"><label>Message (Optional)</label>
+          <textarea id="fMsg" placeholder="Loan amount, preferred EMI, tenure, any specific bank preference, or other requirements..."></textarea>
+        </div>
+        <button class="form-submit" id="submitBtn" onclick="submitLead()">📩 Send My Details — Get Best Loan Deal</button>
+        <p class="form-note">🔒 Your data is safe. Agent will call within 30 minutes during business hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="color:#fff">DSA <span>Loan</span> Agent</a>
+      <p>Your trusted loan & insurance partner across Andhra Pradesh & Telangana. Guided by DSA Loan Agent Service.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Loans</h4>
+      <a href="personal-loan.html">Personal Loan</a><a href="pension-loan.html">Pension Loan</a>
+      <a href="loan-against-property.html">Loan Against Property</a>
+      <a href="commercial-vehicle-loan.html">Commercial Vehicle Loan</a>
+      <a href="working-capital-loan.html">Working Capital Loan</a>
+      <a href="kisan-credit-card.html">Kisan Credit Card (KCC)</a>
+    </div>
+    <div class="footer-col">
+      <h4>Insurance</h4>
+      <a href="index.html#contact">Term Insurance</a><a href="index.html#contact">Health Insurance</a>
+      <a href="group-health-insurance.html">Group Health Insurance</a>
+      <a href="ulip.html">ULIP</a><a href="motor-insurance.html">Motor Insurance</a>
+    </div>
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <a href="emi-calculator.html">EMI Calculator</a>
+      <a href="index.html#contact">Eligibility Check</a>
+      <a href="index.html#services">Compare Loans</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:+919705317513">+91 97053 17513</a>
+      <a href="https://wa.me/919705317513">WhatsApp Agent</a>
+      <a href="#contact">Apply Now</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 DSA Loan Agent by Akhil. All rights reserved.</span>
+    <span>EMI calculations are indicative only. Actual EMI may vary based on bank terms and processing fees.</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919705317513" target="_blank" title="Chat on WhatsApp">💬</a>
+<div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+<script>
+function fmt(n){return '₹'+Math.round(n).toLocaleString('en-IN')}
+function formatAmt(v){v=Number(v);if(v>=10000000)return '₹'+(v/10000000).toFixed(2).replace(/\.?0+$/,'')+'Cr';if(v>=100000)return '₹'+(v/100000).toFixed(2).replace(/\.?0+$/,'')+'L';if(v>=1000)return '₹'+(v/1000).toFixed(1).replace(/\.?0+$/,'')+'K';return '₹'+v;}
+function formatTenure(v){v=Number(v);const y=Math.floor(v/12),m=v%12;if(y===0)return m+' Month'+(m>1?'s':'');if(m===0)return y+' Year'+(y>1?'s':'')+' ('+v+' Months)';return y+' Yr '+m+' Mo ('+v+' Months)';}
+function syncFromRange(rangeId,numId,displayId,fmtFn){const v=document.getElementById(rangeId).value;document.getElementById(numId).value=v;document.getElementById(displayId).textContent=fmtFn(v);calcEMI();}
+function syncFromNum(rangeId,numId,min,max){let v=Number(document.getElementById(numId).value);if(isNaN(v))return;v=Math.max(min,Math.min(max,v));document.getElementById(rangeId).value=v;const displayMap={'loanAmt':'amtDisplay','intRate':'rateDisplay','tenure':'tenureDisplay'};const fmtMap={'loanAmt':formatAmt,'intRate':r=>r+'% p.a.','tenure':formatTenure};if(displayMap[rangeId])document.getElementById(displayMap[rangeId]).textContent=fmtMap[rangeId](v);calcEMI();}
+function setLoanType(el,name,amt,rate,months){document.querySelectorAll('.lt-tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');document.getElementById('loanAmt').value=amt;document.getElementById('loanAmtNum').value=amt;document.getElementById('amtDisplay').textContent=formatAmt(amt);document.getElementById('intRate').value=rate;document.getElementById('intRateNum').value=rate;document.getElementById('rateDisplay').textContent=rate+'% p.a.';document.getElementById('tenure').value=months;document.getElementById('tenureNum').value=months;document.getElementById('tenureDisplay').textContent=formatTenure(months);calcEMI();}
+function calcEMI(){
+  const P=Number(document.getElementById('loanAmt').value);
+  const annualRate=Number(document.getElementById('intRate').value);
+  const n=Number(document.getElementById('tenure').value);
+  if(!P||!annualRate||!n)return;
+  const r=annualRate/(12*100);
+  const emi=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+  const totalPayable=emi*n;
+  const totalInterest=totalPayable-P;
+  const pRatio=Math.round(P/totalPayable*100);
+  const iRatio=100-pRatio;
+  document.getElementById('emiResult').textContent=fmt(emi);
+  document.getElementById('emiMonths').textContent=n+' months';
+  document.getElementById('principalResult').textContent=fmt(P);
+  document.getElementById('interestResult').textContent=fmt(totalInterest);
+  document.getElementById('totalResult').textContent=fmt(totalPayable);
+  document.getElementById('ratioResult').textContent=Math.round(totalInterest/P*100)+'%';
+  const circ=2*Math.PI*35;
+  const pArc=circ*pRatio/100;
+  const iArc=circ*iRatio/100;
+  document.getElementById('donutPrincipal').style.strokeDasharray=pArc+' '+(circ-pArc);
+  document.getElementById('donutInterest').style.strokeDasharray=iArc+' '+(circ-iArc);
+  document.getElementById('donutInterest').style.strokeDashoffset=-(pArc-55);
+  document.getElementById('legPrincipal').textContent=pRatio+'%';
+  document.getElementById('legInterest').textContent=iRatio+'%';
+  document.getElementById('as_principal').textContent=fmt(P);
+  document.getElementById('as_emi').textContent=fmt(emi);
+  document.getElementById('as_interest').textContent=fmt(totalInterest);
+  document.getElementById('as_total').textContent=fmt(totalPayable);
+  buildYearlyTable(P,r,n,emi);
+}
+function buildYearlyTable(P,r,n,emi){
+  let bal=P,tbody='',mo=0;
+  while(mo<n){
+    let yearPrin=0,yearInt=0,yearTotal=0;
+    const openBal=bal;
+    const moEnd=Math.min(mo+12,n);
+    for(let m=mo;m<moEnd;m++){
+      const intPart=bal*r;
+      const prinPart=Math.min(emi-intPart,bal);
+      yearInt+=intPart;yearPrin+=prinPart;yearTotal+=emi;
+      bal-=prinPart;if(bal<0.01)bal=0;
+    }
+    const yr=Math.floor(mo/12)+1;
+    const pct=Math.min(Math.round(yearPrin/P*100*3),100);
+    tbody+=`<tr><td>Year ${yr}</td><td>${fmt(openBal)}</td><td class="prin-td">${fmt(yearPrin)}<div class="amort-bar"><div class="amort-bar-fill" style="width:${pct}%"></div></div></td><td class="int-td">${fmt(yearInt)}</td><td>${fmt(yearTotal)}</td><td>${fmt(Math.max(bal,0))}</td></tr>`;
+    mo=moEnd;
+  }
+  document.getElementById('amortBody').innerHTML=tbody;
+}
+function buildMonthlyTable(P,r,n,emi){
+  let bal=P,tbody='';
+  for(let m=1;m<=n;m++){
+    const intPart=bal*r;
+    const prinPart=Math.min(emi-intPart,bal);
+    bal-=prinPart;if(bal<0.01)bal=0;
+    tbody+=`<tr><td>Month ${m}</td><td>${fmt(bal+prinPart)}</td><td>${fmt(emi)}</td><td class="prin-td">${fmt(prinPart)}</td><td class="int-td">${fmt(intPart)}</td><td>${fmt(Math.max(bal,0))}</td></tr>`;
+  }
+  document.getElementById('monthlyBody').innerHTML=tbody;
+}
+function toggleAmort(){
+  const wrap=document.getElementById('monthlyTableWrap');
+  const btn=document.getElementById('showMoreBtn');
+  if(wrap.style.display==='none'||!wrap.style.display){
+    const P=Number(document.getElementById('loanAmt').value);
+    const r=Number(document.getElementById('intRate').value)/(12*100);
+    const n=Number(document.getElementById('tenure').value);
+    const emi=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+    buildMonthlyTable(P,r,n,emi);
+    wrap.style.display='block';btn.textContent='📋 Hide Monthly Schedule ▴';
+  }else{wrap.style.display='none';btn.textContent='📋 Show Full Monthly Schedule ▾';}
+}
+function toggleFaq(btn){const item=btn.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));if(!isOpen)item.classList.add('open');}
+function toggleMobile(){document.getElementById('mobileMenu').classList.toggle('open')}
+function showToast(msg,isErr){const t=document.getElementById('toast');t.textContent=msg;t.className='toast show'+(isErr?' error':'');setTimeout(()=>t.className='toast',4500);}
+const SHEET_URL='https://script.google.com/macros/s/AKfycbxeK0fvlbU5MZXPCCQDI2Ri6O6SJsBN9wnii_iIYiNmRFboZhF31D1Cs_FWFx9OQ8adUg/exec';
+function submitLead(){
+  const name=document.getElementById('fName').value.trim();
+  const phone=document.getElementById('fPhone').value.trim();
+  const amount=document.getElementById('fAmount').value;
+  const emp=document.getElementById('fEmp').value;
+  const income=document.getElementById('fIncome').value;
+  const city=document.getElementById('fCity').value.trim();
+  const msg=document.getElementById('fMsg').value.trim();
+  if(!name||!phone||!amount||!emp){showToast('⚠️ Please fill all required (*) fields',true);return;}
+  if(!/^[6-9]\d{9}$/.test(phone.replace(/[\s+\-]/g,'').slice(-10))){showToast('⚠️ Please enter a valid mobile number',true);return;}
+  const btn=document.getElementById('submitBtn');
+  btn.disabled=true;btn.innerHTML='<div class="spinner"></div> Sending...';
+  const payload={timestamp:new Date().toLocaleString('en-IN',{timeZone:'Asia/Kolkata'}),name,phone,service:'Loan Application (via EMI Calculator)',amount,employment:emp,income,city,message:msg,source:'EMI Calculator Page'};
+  fetch(SHEET_URL,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload)})
+  .then(r=>r.json()).then(()=>{showToast('✅ Thank you! Agent will call within 30 minutes.');['fName','fPhone','fCity','fMsg'].forEach(id=>document.getElementById(id).value='');['fAmount','fEmp','fIncome'].forEach(id=>document.getElementById(id).selectedIndex=0);btn.disabled=false;btn.innerHTML='📩 Send My Details — Get Best Loan Deal';})
+  .catch(()=>{showToast('❌ Error sending. Please WhatsApp us directly.',true);btn.disabled=false;btn.innerHTML='📩 Send My Details — Get Best Loan Deal';});
+}
+window.addEventListener('DOMContentLoaded',()=>calcEMI());
+</script>
+</body>
+</html>
