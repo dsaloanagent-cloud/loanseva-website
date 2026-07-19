@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<title>Blog | DSA Loan Agent — Loan, Insurance & DSA Agent Guides</title>
+<meta name="description" content="Loans, insurance, credit cards, and DSA agent guides — practical tips and step-by-step articles from DSA Loan Agent, serving Andhra Pradesh & Telangana."/>
+<meta name="keywords" content="dsa loan agent blog, loan tips hyderabad, become dsa agent, home loan blog, personal loan blog"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://dsaloanagent.in/blog.html"/>
+<link rel="icon" type="image/png" href="/favicon.png"/>
+<link rel="apple-touch-icon" href="/favicon.png"/>
+
+<meta property="og:title" content="Blog | DSA Loan Agent"/>
+<meta property="og:description" content="Loans, insurance, credit cards, and DSA agent guides for Andhra Pradesh & Telangana."/>
+<meta property="og:url" content="https://dsaloanagent.in/blog.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="https://dsaloanagent.in/og-image.jpg"/>
+<meta property="og:locale" content="en_IN"/>
+<meta property="og:site_name" content="DSA Loan Agent"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "DSA Loan Agent Blog",
+  "url": "https://dsaloanagent.in/blog.html",
+  "publisher": {"@type":"Organization","name":"DSA Loan Agent"}
+}
+</script>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue-dark:#0D2B6E;
+  --blue:#1A47B8;
+  --blue-mid:#2563EB;
+  --blue-bright:#3B82F6;
+  --blue-light:#EFF6FF;
+  --blue-pale:#DBEAFE;
+  --accent:#F59E0B;
+  --accent-light:#FEF3C7;
+  --white:#FFFFFF;
+  --gray-50:#F8FAFC;
+  --gray-100:#F1F5F9;
+  --gray-300:#CBD5E1;
+  --gray-500:#64748B;
+  --gray-700:#334155;
+  --gray-900:#0F172A;
+  --radius:10px;
+  --shadow-sm:0 1px 3px rgba(0,0,0,0.08);
+  --shadow:0 4px 16px rgba(13,43,110,0.12);
+  --shadow-lg:0 12px 40px rgba(13,43,110,0.18);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--gray-900);overflow-x:hidden}
+
+/* ─── TOP BAR ─── */
+.topbar{background:var(--blue-dark);color:rgba(255,255,255,0.75);font-size:0.75rem;padding:0.4rem 5%;display:flex;justify-content:space-between;align-items:center;}
+.topbar a{color:rgba(255,255,255,0.75);text-decoration:none;display:inline-flex;align-items:center;gap:0.3rem;transition:color 0.15s}
+.topbar a:hover{color:#fff}
+.topbar-right{display:flex;gap:1.5rem}
+
+/* ─── NAV ─── */
+nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--gray-100);box-shadow:var(--shadow-sm);}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:64px;position:relative;}
+.nav-logo{font-family:'Poppins',sans-serif;font-size:1.25rem;font-weight:900;color:var(--blue-dark);text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:0.5rem;}
+.nav-logo span{color:var(--blue-mid)}
+.nav-menu{display:flex;align-items:center;gap:0;list-style:none}
+.nav-item{position:relative}
+.nav-link{display:flex;align-items:center;gap:0.3rem;padding:0 0.9rem;height:64px;font-size:0.83rem;font-weight:600;color:var(--gray-700);text-decoration:none;border-bottom:2.5px solid transparent;transition:color 0.15s,border-color 0.15s;white-space:nowrap;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none;font-family:'Inter',sans-serif;}
+.nav-link:hover,.nav-item:hover>.nav-link{color:var(--blue-mid);border-bottom-color:var(--blue-mid)}
+.nav-link svg{width:14px;height:14px;transition:transform 0.2s;flex-shrink:0}
+.nav-item:hover>.nav-link svg{transform:rotate(180deg)}
+.dropdown{position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--gray-100);border-radius:var(--radius);box-shadow:var(--shadow-lg);padding:0.5rem;min-width:200px;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity 0.2s,transform 0.2s,visibility 0.2s;z-index:300;}
+.nav-item:hover>.dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown a{display:flex;align-items:center;gap:0.4rem;padding:0.45rem 0.75rem;font-size:0.82rem;color:var(--gray-700);text-decoration:none;border-radius:6px;transition:background 0.15s,color 0.15s;}
+.dropdown a:hover{background:var(--blue-light);color:var(--blue-mid)}
+.dropdown a::before{content:'›';color:var(--blue-bright);font-weight:700}
+.mega{position:fixed;left:0;right:0;top:64px;background:#fff;border-top:2px solid var(--blue-mid);border-bottom:1px solid var(--gray-100);box-shadow:var(--shadow-lg);padding:2rem 5%;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity 0.2s,transform 0.2s,visibility 0.2s;z-index:300;}
+.nav-item:hover>.mega{opacity:1;visibility:visible;transform:translateY(0)}
+.mega-inner{max-width:1280px;margin:0 auto;display:grid;gap:2rem}
+.mega-loans{grid-template-columns:repeat(4,1fr)}
+.mega-insurance{grid-template-columns:repeat(4,1fr)}
+.mega-col h4{font-size:0.7rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--blue-mid);margin-bottom:0.75rem;padding-bottom:0.5rem;border-bottom:1px solid var(--blue-pale);}
+.mega-col a{display:flex;align-items:center;gap:0.4rem;padding:0.35rem 0.4rem;font-size:0.82rem;color:var(--gray-700);text-decoration:none;border-radius:6px;transition:background 0.15s,color 0.15s;}
+.mega-col a:hover{background:var(--blue-light);color:var(--blue-mid)}
+.mega-col a::before{content:'›';color:var(--blue-bright);font-weight:700}
+.nav-cta{background:var(--blue-mid);color:#fff !important;padding:0.55rem 1.25rem !important;border-radius:8px;height:auto !important;border-bottom:none !important;font-size:0.82rem !important;transition:background 0.15s !important;display:inline-flex !important;align-items:center;gap:0.3rem;}
+.nav-cta:hover{background:var(--blue-dark) !important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--gray-700);border-radius:2px;transition:all 0.25s}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;z-index:500;overflow-y:auto;padding:1.5rem 5%;}
+.mobile-menu.open{display:block}
+.mobile-close{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;}
+.mobile-close button{background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--gray-700)}
+.mobile-section{margin-bottom:1.5rem}
+.mobile-section h3{font-size:0.7rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue-mid);margin-bottom:0.5rem;}
+.mobile-section a{display:block;padding:0.5rem 0;font-size:0.875rem;color:var(--gray-700);text-decoration:none;border-bottom:1px solid var(--gray-100);}
+
+/* ─── PAGE HERO ─── */
+.page-hero{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,#1e5fc4 100%);padding:56px 5% 48px;text-align:center;}
+.page-hero .tag{display:inline-flex;align-items:center;gap:0.4rem;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:0.3rem 0.8rem;border-radius:50px;margin-bottom:1.1rem;}
+.page-hero h1{font-family:'Poppins',sans-serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;color:#fff;margin-bottom:0.75rem;}
+.page-hero p{color:rgba(255,255,255,0.72);font-size:0.98rem;max-width:560px;margin:0 auto;line-height:1.7;}
+
+/* ─── FILTER TAGS ─── */
+.filter-row{max-width:1100px;margin:0 auto;padding:1.75rem 5% 0;display:flex;gap:0.6rem;flex-wrap:wrap;justify-content:center;}
+.filter-pill{background:var(--gray-50);border:1px solid var(--gray-100);color:var(--gray-700);font-size:0.8rem;font-weight:600;padding:0.5rem 1.1rem;border-radius:50px;cursor:pointer;transition:all 0.15s;}
+.filter-pill.active,.filter-pill:hover{background:var(--blue-mid);color:#fff;border-color:var(--blue-mid);}
+
+/* ─── BLOG GRID ─── */
+.blog-section{max-width:1100px;margin:0 auto;padding:2.25rem 5% 4rem;}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;}
+.blog-card{background:#fff;border:1px solid var(--gray-100);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:box-shadow 0.2s,transform 0.2s;text-decoration:none;display:flex;flex-direction:column;}
+.blog-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px);}
+.blog-thumb{height:150px;background:linear-gradient(135deg,var(--blue-mid),var(--blue-dark));display:flex;align-items:center;justify-content:center;font-size:2.5rem;}
+.blog-body{padding:1.25rem;flex:1;display:flex;flex-direction:column;}
+.blog-cat{display:inline-block;background:var(--blue-light);color:var(--blue-mid);font-size:0.68rem;font-weight:700;letter-spacing:0.4px;text-transform:uppercase;padding:0.25rem 0.6rem;border-radius:4px;margin-bottom:0.7rem;width:fit-content;}
+.blog-card h3{font-family:'Poppins',sans-serif;font-size:1.02rem;font-weight:700;color:var(--blue-dark);line-height:1.4;margin-bottom:0.6rem;}
+.blog-card p{font-size:0.83rem;color:var(--gray-500);line-height:1.65;margin-bottom:0.9rem;flex:1;}
+.blog-meta{font-size:0.72rem;color:var(--gray-300);display:flex;justify-content:space-between;border-top:1px solid var(--gray-100);padding-top:0.75rem;}
+.blog-meta .readmore{color:var(--blue-mid);font-weight:700;}
+
+.empty-note{text-align:center;color:var(--gray-500);font-size:0.85rem;padding:2rem;background:var(--gray-50);border-radius:var(--radius);border:1px dashed var(--gray-300);margin-top:1rem;}
+
+/* CTA BANNER */
+.cta-banner{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));padding:48px 5%;text-align:center;}
+.cta-banner h2{font-family:'Poppins',sans-serif;font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:900;color:#fff;margin-bottom:0.6rem}
+.cta-banner p{color:rgba(255,255,255,0.7);font-size:0.9rem;margin-bottom:1.5rem}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--blue-dark);padding:0.75rem 1.5rem;border-radius:8px;font-weight:700;font-size:0.85rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;}
+.btn-outline-white{background:transparent;color:#fff;padding:0.75rem 1.5rem;border-radius:8px;font-weight:600;font-size:0.85rem;text-decoration:none;border:1.5px solid rgba(255,255,255,0.4);display:inline-flex;align-items:center;gap:0.4rem;}
+
+.wa-float{position:fixed;bottom:1.75rem;right:1.75rem;z-index:400;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.45);}
+
+footer{background:var(--blue-dark);color:rgba(255,255,255,0.5);padding:3.5rem 5% 2rem}
+.footer-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:2rem;margin-bottom:2rem}
+.footer-brand .nav-logo{display:block;margin-bottom:0.75rem;color:#fff;font-size:1.2rem}
+.footer-brand p{font-size:0.78rem;line-height:1.7;max-width:220px}
+.footer-col h4{font-size:0.68rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:0.875rem}
+.footer-col a{display:block;color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.78rem;margin-bottom:0.4rem;transition:color 0.15s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{max-width:1280px;margin:0 auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;align-items:center;font-size:0.72rem;flex-wrap:wrap;gap:0.5rem}
+
+@media(max-width:900px){
+  .nav-menu{display:none}
+  .hamburger{display:flex}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .topbar{display:none}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span>🏦 RBI Registered DSA Agent | Serving Andhra Pradesh &amp; Telangana</span>
+  <div class="topbar-right">
+    <a href="tel:+919705317513">📞 +91 97053 17513</a>
+    <a href="https://wa.me/919705317513" target="_blank" rel="noopener noreferrer">💬 WhatsApp Us</a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">DSA <span>Loan</span> Agent</a>
+    <ul class="nav-menu">
+      <li><a href="/" class="nav-link">Home</a></li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/loans.html" aria-haspopup="true" aria-expanded="false">Loans
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <div class="mega" role="menu">
+          <div class="mega-inner mega-loans">
+            <div class="mega-col">
+              <h4>Personal &amp; Retail</h4>
+              <a href="/personal-loan.html">Personal Loan</a>
+              <a href="/instant-loan.html">Instant Loan</a>
+              <a href="/salary-loan.html">Salary-Based Loan</a>
+              <a href="/pension-loan.html">Pension Loan</a>
+            </div>
+            <div class="mega-col">
+              <h4>Home &amp; Property</h4>
+              <a href="/home-loan.html">Home Loan</a>
+              <a href="/home-loan-balance-transfer.html">Home Loan Balance Transfer</a>
+              <a href="/loan-against-property.html">Loan Against Property (LAP)</a>
+              <a href="/plot-construction-loan.html">Plot / Construction Loan</a>
+            </div>
+            <div class="mega-col">
+              <h4>Vehicle Loans</h4>
+              <a href="/car-loan.html">Car Loan</a>
+              <a href="/used-car-loan.html">Used Car Loan</a>
+              <a href="/two-wheeler-loan.html">Two-Wheeler Loan</a>
+              <a href="/commercial-vehicle-loan.html">Commercial Vehicle Loan</a>
+              <h4 style="margin-top:1rem">Education Loan</h4>
+              <a href="/education-loan-india.html">Education Loan (India)</a>
+              <a href="/education-loan-abroad.html">Education Loan (Abroad)</a>
+            </div>
+            <div class="mega-col">
+              <h4>Business &amp; MSME</h4>
+              <a href="/business-loan.html">Business Loan</a>
+              <a href="/msme-loan.html">MSME Loan</a>
+              <a href="/startup-loan.html">Startup Loan</a>
+              <a href="/working-capital-loan.html">Working Capital Loan</a>
+              <a href="/overdraft-cash-credit.html">Overdraft / Cash Credit</a>
+              <h4 style="margin-top:1rem">Agriculture</h4>
+              <a href="/kisan-credit-card.html">Kisan Credit Card (KCC)</a>
+              <a href="/tractor-loan.html">Tractor Loan</a>
+              <a href="/farm-equipment-loan.html">Farm Equipment Loan</a>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/insurance.html" aria-haspopup="true" aria-expanded="false">Insurance
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <div class="mega" role="menu">
+          <div class="mega-inner mega-insurance">
+            <div class="mega-col">
+              <h4>Life Insurance</h4>
+              <a href="/term-insurance.html">Term Insurance</a>
+              <a href="/whole-life-insurance.html">Whole Life Policy</a>
+              <a href="/ulip.html">ULIP</a>
+            </div>
+            <div class="mega-col">
+              <h4>Health Insurance</h4>
+              <a href="/individual-health-insurance.html">Individual Health Insurance</a>
+              <a href="/family-floater-health-insurance.html">Family Floater Plan</a>
+              <a href="/senior-citizen-health-plan.html">Senior Citizen Health Plan</a>
+              <a href="/critical-illness-insurance.html">Critical Illness Cover</a>
+            </div>
+            <div class="mega-col">
+              <h4>General Insurance</h4>
+              <a href="/motor-insurance.html">Motor Insurance (Car / Bike)</a>
+              <a href="/travel-insurance.html">Travel Insurance</a>
+              <a href="/home-insurance.html">Home Insurance</a>
+              <a href="/personal-accident-insurance.html">Personal Accident Insurance</a>
+            </div>
+            <div class="mega-col">
+              <h4>Business Insurance</h4>
+              <a href="/fire-burglary-insurance.html">Fire &amp; Burglary Insurance</a>
+              <a href="/marine-insurance.html">Marine Insurance</a>
+              <a href="/group-health-insurance.html">Group Health Insurance</a>
+              <a href="/workmen-compensation-insurance.html">Workmen Compensation</a>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/credit-cards.html" aria-haspopup="true" aria-expanded="false">Credit Cards
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <div class="dropdown" role="menu">
+          <a href="/credit-card-salaried.html">Credit Cards for Salaried</a>
+          <a href="/credit-card-self-employed.html">Credit Cards for Self-Employed</a>
+          <a href="/business-credit-cards.html">Business Credit Cards</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/tools.html" aria-haspopup="true" aria-expanded="false">Tools
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <div class="dropdown" role="menu">
+          <a href="/emi-calculator.html">EMI Calculator</a>
+          <a href="/check-loan-eligibility.html">Check Loan Eligibility</a>
+          <a href="/compare-loans.html">Compare Loans</a>
+          <a href="/compare-insurance-plans.html">Compare Insurance Plans</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/about.html" aria-haspopup="true" aria-expanded="false">About
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <div class="dropdown" role="menu">
+          <a href="/why-choose-us.html">Why Choose Us</a>
+          <a href="/our-banking-partners.html">Our Banking Partners</a>
+          <a href="/faqs.html">FAQs</a>
+          <a href="/contact-us.html">Contact Us</a>
+        </div>
+      </li>
+
+      <li><a href="/blog.html" class="nav-link" style="color:var(--blue-mid);border-bottom-color:var(--blue-mid)">Blog</a></li>
+      <li><a href="/apply-now.html" class="nav-link nav-cta">Apply Now →</a></li>
+    </ul>
+
+    <div class="hamburger" onclick="toggleMobile()" aria-label="Open menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+  <div class="mobile-close">
+    <span class="nav-logo">DSA <span>Loan</span> Agent</span>
+    <button onclick="toggleMobile()" aria-label="Close menu">✕</button>
+  </div>
+  <div class="mobile-section">
+    <h3>Menu</h3>
+    <a href="/" onclick="toggleMobile()">🏠 Home</a>
+    <a href="/blog.html" onclick="toggleMobile()">📝 Blog</a>
+  </div>
+  <div class="mobile-section">
+    <h3>Personal &amp; Retail Loans</h3>
+    <a href="/personal-loan.html" onclick="toggleMobile()">Personal Loan</a>
+    <a href="/instant-loan.html" onclick="toggleMobile()">Instant Loan</a>
+    <a href="/salary-loan.html" onclick="toggleMobile()">Salary-Based Loan</a>
+    <a href="/pension-loan.html" onclick="toggleMobile()">Pension Loan</a>
+  </div>
+  <div class="mobile-section">
+    <h3>Home &amp; Property</h3>
+    <a href="/home-loan.html" onclick="toggleMobile()">Home Loan</a>
+    <a href="/home-loan-balance-transfer.html" onclick="toggleMobile()">Home Loan Balance Transfer</a>
+    <a href="/loan-against-property.html" onclick="toggleMobile()">Loan Against Property</a>
+    <a href="/plot-construction-loan.html" onclick="toggleMobile()">Plot / Construction Loan</a>
+  </div>
+  <div class="mobile-section">
+    <h3>Business &amp; MSME</h3>
+    <a href="/business-loan.html" onclick="toggleMobile()">Business Loan</a>
+    <a href="/msme-loan.html" onclick="toggleMobile()">MSME Loan</a>
+    <a href="/startup-loan.html" onclick="toggleMobile()">Startup Loan</a>
+    <a href="/working-capital-loan.html" onclick="toggleMobile()">Working Capital Loan</a>
+  </div>
+  <div class="mobile-section">
+    <h3>Insurance</h3>
+    <a href="/term-insurance.html" onclick="toggleMobile()">Term Insurance</a>
+    <a href="/individual-health-insurance.html" onclick="toggleMobile()">Health Insurance</a>
+    <a href="/motor-insurance.html" onclick="toggleMobile()">Motor Insurance</a>
+  </div>
+  <div class="mobile-section">
+    <h3>Other</h3>
+    <a href="/emi-calculator.html" onclick="toggleMobile()">EMI Calculator</a>
+    <a href="/apply-now.html" onclick="toggleMobile()">Apply Now</a>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <span class="tag">DSA Loan Agent Blog</span>
+  <h1>Loan &amp; Insurance Guides — AP &amp; Telangana</h1>
+  <p>Practical, honest guides on loans, insurance, credit cards, and becoming a DSA agent — written for people in Andhra Pradesh &amp; Telangana.</p>
+</div>
+
+<!-- FILTER TAGS -->
+<div class="filter-row">
+  <span class="filter-pill active" onclick="filterBlogs('all',this)">All Posts</span>
+  <span class="filter-pill" onclick="filterBlogs('dsa-agent',this)">DSA Agent</span>
+  <span class="filter-pill" onclick="filterBlogs('home-loan',this)">Home Loan</span>
+  <span class="filter-pill" onclick="filterBlogs('personal-loan',this)">Personal Loan</span>
+  <span class="filter-pill" onclick="filterBlogs('business-loan',this)">Business Loan</span>
+  <span class="filter-pill" onclick="filterBlogs('insurance',this)">Insurance</span>
+</div>
+
+<!-- BLOG GRID -->
+<div class="blog-section">
+  <div class="blog-grid" id="blogGrid">
+
+    <a href="/blog/dsa-loan-agent-hyderabad-no-investment.html" class="blog-card" data-cat="dsa-agent">
+      <div class="blog-thumb">🤝</div>
+      <div class="blog-body">
+        <span class="blog-cat">DSA Agent</span>
+        <h3>How to Become a DSA Loan Agent Without Any Investment in Hyderabad</h3>
+        <p>Zero-investment DSA agent guide — eligibility, registration steps, top banks &amp; NBFCs, and commission structure explained.</p>
+        <div class="blog-meta">
+          <span>📅 July 2026</span>
+          <span class="readmore">Read More →</span>
+        </div>
+      </div>
+    </a>
+
+    <!--
+    ADD NEW BLOG CARDS HERE — copy the block above and edit:
+    <a href="/blog/your-new-post.html" class="blog-card" data-cat="home-loan">
+      <div class="blog-thumb">🏠</div>
+      <div class="blog-body">
+        <span class="blog-cat">Home Loan</span>
+        <h3>Your New Blog Title</h3>
+        <p>1-2 line summary of the post.</p>
+        <div class="blog-meta">
+          <span>📅 Month Year</span>
+          <span class="readmore">Read More →</span>
+        </div>
+      </div>
+    </a>
+    -->
+
+  </div>
+  <div class="empty-note" id="emptyNote" style="display:none;">No posts in this category yet — check back soon!</div>
+</div>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <h2>Have a Loan or DSA Question?</h2>
+  <p>Talk to a real agent — free consultation, no obligation.</p>
+  <div class="cta-btns">
+    <a href="/apply-now.html" class="btn-white">📋 Apply Now — Free</a>
+    <a href="https://wa.me/919705317513" target="_blank" rel="noopener noreferrer" class="btn-outline-white">💬 Chat on WhatsApp</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo" style="color:#fff">DSA <span>Loan</span> Agent</a>
+      <p>Your trusted loan &amp; insurance partner across Andhra Pradesh &amp; Telangana. Guided by DSA Loan Agent Service.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Loans</h4>
+      <a href="/home-loan.html">Home Loan</a>
+      <a href="/personal-loan.html">Personal Loan</a>
+      <a href="/business-loan.html">Business Loan</a>
+      <a href="/car-loan.html">Vehicle Loan</a>
+      <a href="/education-loan-india.html">Education Loan</a>
+      <a href="/msme-loan.html">MSME Loan</a>
+    </div>
+    <div class="footer-col">
+      <h4>Insurance</h4>
+      <a href="/term-insurance.html">Term Insurance</a>
+      <a href="/individual-health-insurance.html">Health Insurance</a>
+      <a href="/motor-insurance.html">Motor Insurance</a>
+      <a href="/group-health-insurance.html">Group Health Insurance</a>
+    </div>
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <a href="/emi-calculator.html">EMI Calculator</a>
+      <a href="/check-loan-eligibility.html">Eligibility Check</a>
+      <a href="/compare-loans.html">Compare Loans</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:+919705317513">+91 97053 17513</a>
+      <a href="https://wa.me/919705317513" target="_blank" rel="noopener noreferrer">WhatsApp Agent</a>
+      <a href="/apply-now.html">Apply Now</a>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 DSA Loan Agent by Akhil. All rights reserved.</span>
+    <span>Interest rates are indicative. Actual rates depend on lender assessment.</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919705317513" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">💬</a>
+
+<script>
+function toggleMobile(){
+  const m=document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+  document.body.style.overflow=m.classList.contains('open')?'hidden':'';
+}
+function filterBlogs(cat,el){
+  document.querySelectorAll('.filter-pill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  const cards=document.querySelectorAll('.blog-card');
+  let visibleCount=0;
+  cards.forEach(c=>{
+    const show = cat==='all' || c.getAttribute('data-cat')===cat;
+    c.style.display = show ? 'flex' : 'none';
+    if(show) visibleCount++;
+  });
+  document.getElementById('emptyNote').style.display = visibleCount===0 ? 'block' : 'none';
+}
+</script>
+
+</body>
+</html>
